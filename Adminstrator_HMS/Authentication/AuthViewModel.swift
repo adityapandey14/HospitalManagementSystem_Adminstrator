@@ -59,7 +59,7 @@ class AuthViewModel: ObservableObject {
             let user = User(id: result.user.uid , fullName: fullName, email: email)
             // here user store data which you can't store directly on the firebase you have to store in form of json like raw data format with key value pair
             let encodedUser = try Firestore.Encoder().encode(user)
-            try await Firestore.firestore().collection("patient").document(user.id).setData(encodedUser)
+            try await Firestore.firestore().collection("adminstrator").document(user.id).setData(encodedUser)
             
             //This is how we got information uploaded to firebase
             //first we go to firestore.firestore then collection there we got user then we create document using user id then set all the data of the user
@@ -91,12 +91,12 @@ class AuthViewModel: ObservableObject {
         self.currentUser = nil
 
 
-                Firestore.firestore().collection("patient").document(userId).delete() { err in
+                Firestore.firestore().collection("adminstrator").document(userId).delete() { err in
                     if let err = err {
                         print("error: \(err)")
                     } else {
                         print("Deleted user in db users")
-                        Storage.storage().reference(forURL: "gs://myapp.appspot.com").child("patient").child(userId).delete() { err in
+                        Storage.storage().reference(forURL: "gs://myapp.appspot.com").child("adminstrator").child(userId).delete() { err in
                             if let err = err {
                                 print("error: \(err)")
                             } else {
@@ -135,7 +135,7 @@ class AuthViewModel: ObservableObject {
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         //If there is data it will go and fetch data if there is not then it will return will wasting api calls
-        guard let snapshot = try? await Firestore.firestore().collection("patient").document(uid).getDocument() else { return }
+        guard let snapshot = try? await Firestore.firestore().collection("adminstrator").document(uid).getDocument() else { return }
         self.currentUser = try? snapshot.data(as: User.self)
         
        // print("DEBUG: Current user is \(String(describing: self.currentUser))")
