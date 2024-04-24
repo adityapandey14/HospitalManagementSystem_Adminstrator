@@ -18,6 +18,7 @@ protocol AuthenticationFormProtocol {
 
 enum AuthError: Error {
     case noCurrentUser
+    case notAdmin
     // Add other error cases as needed
 }
 
@@ -44,12 +45,26 @@ class AuthViewModel: ObservableObject {
     
     func signIn(withEmail email: String , password: String) async throws {
         do {
+            // Check if the email exists in the admin collection before attempting sign-in
+            let isAdmin = try await checkIfAdmin(email: email)
+            guard isAdmin else {
+                throw AuthError.notAdmin
+            }
+            
+            // Perform sign-in if the user is an admin
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
             await fetchUser()
         } catch {
             print("DEBUG: Failed to log in with error \(error.localizedDescription)")
         }
+    }
+    func checkIfAdmin(email: String) async throws -> Bool {
+        // Query Firestore to check if the email exists in the admin collection
+        let querySnapshot = try await Firestore.firestore().collection("adminstrator").whereField("email", isEqualTo: email).getDocuments()
+        
+        // If there is at least one document with the given email, return true (user is admin)
+        return !querySnapshot.documents.isEmpty
     }
     
     func createUser(withEmail email : String , password: String , fullName: String ) async throws {

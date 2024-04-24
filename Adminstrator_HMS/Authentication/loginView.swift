@@ -1,9 +1,4 @@
-//
-//  loginView.swift
-//  Adminstrator_HMS
-//
-//  Created by Aditya Pandey on 22/04/24.
-//
+
 
 import SwiftUI
 import FirebaseAuth
@@ -18,92 +13,70 @@ struct loginView: View {
    
     var body: some View {
         NavigationView{
+            VStack{
                 VStack{
-                    //Linktutor
-                    VStack(alignment: .leading){
-                        Text("Patient")
-                            .fontWeight(.bold)
-                            .font(.system(size: 70).weight(.bold))
-                            .fontDesign(.rounded)
-                    }
-                    .offset(y: 60)
-                    
-                    //login and signup option
-                    HStack{
-                        VStack{
-                            Text("Login")
-                                .font(AppFont.mediumSemiBold)
-                            Rectangle()
-                                .frame(width: 100, height: 3)
-                                .foregroundStyle(Color.accent)
-                        }
-                        Spacer()
-                        VStack{
-                            NavigationLink(destination: signUpView()){
-                                Text("Sign up")
-                                    .font(AppFont.mediumSemiBold)
-                                    .foregroundColor(.gray)
-                            }
-                            Rectangle()
-                                .frame(width: 100, height: 3)
-                                .foregroundStyle(Color.clear)
-                        }
-                    }
-                    .padding(.horizontal, 50)
-                    .offset(y: 130)
-                    
-                    //login details
-                    List{
+
+                    VStack{
                         VStack(alignment: .leading){
-                            Text("Email address")
-                                .font(AppFont.mediumReg)
-                                .padding(.leading, 10)
+                            VStack(alignment: .leading) {
+                                Text("Welcome back")
+                                    .font(.system(size: 30).weight(.light))
+                                Text("Enter your Credentials to log in")
+                                    .font(.system(size: 17).weight(.light))
+                            }
+                            .padding(10)
+
                             TextField("Email addresss", text: $email)
-                                .listRowBackground(Color.background)
-                                .autocapitalization(/*@START_MENU_TOKEN@*/.none/*@END_MENU_TOKEN@*/)
+                                .autocapitalization(.none)
                                 .textFieldStyle(.plain)
                                 .cornerRadius(8)
                                 .padding(10)
+                                .underlineTextField()
                         }
                         .listRowBackground(Color.clear)
                         VStack(alignment: .leading){
-                            Text("Password")
-                                .font(AppFont.mediumReg)
-                                .padding(.leading, 10)
+
                             SecureField("Password", text: $password)
                                 .cornerRadius(8)
                                 .padding(10)
+                                .underlineTextField()
                         }
                         .padding(.top)
-                        .listRowBackground(Color.clear)
                     }
                     .padding(.top, 20)
-                    .offset(y: 150)
                     .listStyle(PlainListStyle())
+                    
+                    VStack(alignment: .trailing){
+                        Text("Forgot Password?")
+                            .foregroundColor(.midNightExpress)
+                            .padding(.leading,170)
+                    }
                     
                     //button
                     Button {
                         Task {
-                           try await viewModel.signIn(withEmail: email, password: password)
+                            try await viewModel.signIn(withEmail: email, password: password)
+                            print("Button clicked")
                         }
                         
                     } label :{
                         
                         Text("Login")
-                            .font(AppFont.mediumSemiBold)
-                            .foregroundColor(.black)
+                            .foregroundColor(.white)
+                            .frame(width: 325, height: 40)
+                            .background(Color.midNightExpress)
+                            .cornerRadius(10)
                     }
-                    .frame(width: 250, height: 35)
-                    .padding()
                     .disabled(!FormIsValid)
                     .opacity(FormIsValid ? 1.0 : 0.5)
-                    .background(Color.accent)
-                    .cornerRadius(50)
-                    Spacer()
                 }
-                .padding()
-                .background(Color.background)
-//                .environment(\.colorScheme, .dark)
+                
+               
+                Spacer()
+            }
+            .padding()
+            .background(Color.solitude)
+            //          .environment(\.colorScheme, .dark)
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
@@ -124,3 +97,12 @@ extension loginView: AuthenticationFormProtocol {
     }
 }
     
+extension View {
+    func underlineTextField() -> some View {
+        self
+            .padding(.vertical, 10)
+            .overlay(Rectangle().frame(height: 2).padding(.top, 35))
+            .foregroundColor(.gray)
+            .padding(10)
+    }
+}

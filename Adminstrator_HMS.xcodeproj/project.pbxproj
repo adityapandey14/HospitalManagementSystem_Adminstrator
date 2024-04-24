@@ -11,7 +11,6 @@
 		DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */; };
 		DF6B2EBB2BD58E1D00FAD930 /* appFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */; };
 		DF6B2ED32BD59C1700FAD930 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2ED22BD59C1700FAD930 /* AuthViewModel.swift */; };
-		DF6B2ED52BD59C3200FAD930 /* signUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2ED42BD59C3200FAD930 /* signUpView.swift */; };
 		DF6B2ED72BD59C4600FAD930 /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2ED62BD59C4600FAD930 /* loginView.swift */; };
 		DF6B2ED92BD59CA100FAD930 /* ProfileInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2ED82BD59CA100FAD930 /* ProfileInputView.swift */; };
 		DF6B2EDB2BD59D4600FAD930 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EDA2BD59D4600FAD930 /* Homepage.swift */; };
@@ -49,11 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		474ADBDC2BD8EA3F00A31ADB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		DF6B2EAF2BD58CF900FAD930 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appFonts.swift; sourceTree = "<group>"; };
 		DF6B2ED22BD59C1700FAD930 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		DF6B2ED42BD59C3200FAD930 /* signUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpView.swift; sourceTree = "<group>"; };
 		DF6B2ED62BD59C4600FAD930 /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		DF6B2ED82BD59CA100FAD930 /* ProfileInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInputView.swift; sourceTree = "<group>"; };
 		DF6B2EDA2BD59D4600FAD930 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
@@ -108,7 +107,6 @@
 				DF6B2EAF2BD58CF900FAD930 /* User.swift */,
 				DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */,
 				DF6B2ED22BD59C1700FAD930 /* AuthViewModel.swift */,
-				DF6B2ED42BD59C3200FAD930 /* signUpView.swift */,
 				DF6B2ED82BD59CA100FAD930 /* ProfileInputView.swift */,
 				DF6B2ED62BD59C4600FAD930 /* loginView.swift */,
 			);
@@ -180,6 +178,7 @@
 		DF9B2F622BD26E92009B8C02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				474ADBDC2BD8EA3F00A31ADB /* MobileCoreServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -326,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF6B2ED52BD59C3200FAD930 /* signUpView.swift in Sources */,
 				DF6B2ED92BD59CA100FAD930 /* ProfileInputView.swift in Sources */,
 				DF9B2F372BD26E22009B8C02 /* ContentView.swift in Sources */,
 				DF6B2EDB2BD59D4600FAD930 /* Homepage.swift in Sources */,
