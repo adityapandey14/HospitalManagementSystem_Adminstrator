@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */; };
+		47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B82BDA34280008DAE9 /* FirebaseManager.swift */; };
 		DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EAF2BD58CF900FAD930 /* User.swift */; };
 		DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */; };
 		DF6B2EBB2BD58E1D00FAD930 /* appFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		474ADBDC2BD8EA3F00A31ADB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAlloocationView.swift; sourceTree = "<group>"; };
+		47B685B82BDA34280008DAE9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		DF6B2EAF2BD58CF900FAD930 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appFonts.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */,
 				DF6B2ED22BD59C1700FAD930 /* AuthViewModel.swift */,
 				DF6B2ED82BD59CA100FAD930 /* ProfileInputView.swift */,
+				47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */,
 				DF6B2ED62BD59C4600FAD930 /* loginView.swift */,
 			);
 			path = Authentication;
@@ -141,6 +146,7 @@
 				DF9B2F342BD26E22009B8C02 /* Adminstrator_HMSApp.swift */,
 				DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */,
 				DF6B2EDA2BD59D4600FAD930 /* Homepage.swift */,
+				47B685B82BDA34280008DAE9 /* FirebaseManager.swift */,
 				DF9B2F362BD26E22009B8C02 /* ContentView.swift */,
 				DF6B2EAD2BD58CD600FAD930 /* Authentication */,
 				DF9B2F382BD26E24009B8C02 /* Assets.xcassets */,
@@ -329,7 +335,9 @@
 				DF9B2F372BD26E22009B8C02 /* ContentView.swift in Sources */,
 				DF6B2EDB2BD59D4600FAD930 /* Homepage.swift in Sources */,
 				DF6B2EBB2BD58E1D00FAD930 /* appFonts.swift in Sources */,
+				47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */,
 				DF6B2ED32BD59C1700FAD930 /* AuthViewModel.swift in Sources */,
+				47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */,
 				DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */,
 				DF9B2F352BD26E22009B8C02 /* Adminstrator_HMSApp.swift in Sources */,
 				DF6B2ED72BD59C4600FAD930 /* loginView.swift in Sources */,
