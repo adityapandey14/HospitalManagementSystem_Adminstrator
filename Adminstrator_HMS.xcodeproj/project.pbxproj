@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */; };
 		47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B82BDA34280008DAE9 /* FirebaseManager.swift */; };
-		48E9A8872BDE3986002360DE /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E9A8862BDE3986002360DE /* MailView.swift */; };
 		48E9A8892BDE9823002360DE /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E9A8882BDE9823002360DE /* EmailView.swift */; };
 		DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EAF2BD58CF900FAD930 /* User.swift */; };
 		DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */; };
@@ -55,7 +54,6 @@
 		474ADBDC2BD8EA3F00A31ADB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAlloocationView.swift; sourceTree = "<group>"; };
 		47B685B82BDA34280008DAE9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		48E9A8862BDE3986002360DE /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		48E9A8882BDE9823002360DE /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		DF6B2EAF2BD58CF900FAD930 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		48A05C052BDA4D6100719DA1 /* DoctorEmail */ = {
 			isa = PBXGroup;
 			children = (
-				48E9A8862BDE3986002360DE /* MailView.swift */,
 				48E9A8882BDE9823002360DE /* EmailView.swift */,
 			);
 			path = DoctorEmail;
@@ -353,7 +350,6 @@
 				47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */,
 				DF6B2ED32BD59C1700FAD930 /* AuthViewModel.swift in Sources */,
 				47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */,
-				48E9A8872BDE3986002360DE /* MailView.swift in Sources */,
 				DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */,
 				DF9B2F352BD26E22009B8C02 /* Adminstrator_HMSApp.swift in Sources */,
 				DF6B2ED72BD59C4600FAD930 /* loginView.swift in Sources */,
