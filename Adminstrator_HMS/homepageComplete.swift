@@ -20,18 +20,18 @@ struct homepageComplete: View {
 
                 CodeGeneratorView()
                     .tabItem {
-                        Label("Timetable" , systemImage: "calendar")
+                        Label("codeGenerator" , systemImage: "calendar")
                     }
                 
                 EmailView()
                     .tabItem {
-                        Label("Requests" , systemImage: "shared.with.you")
+                        Label("Email" , systemImage: "shared.with.you")
                     }
                 
                 
                 RoomAllocationView()
                     .tabItem {
-                        Label("Requests" , systemImage: "shared.with.you")
+                        Label("Rooms" , systemImage: "shared.with.you")
                     }
                 
                
