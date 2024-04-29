@@ -70,9 +70,20 @@ struct loginView: View {
                     .disabled(!FormIsValid)
                     .opacity(FormIsValid ? 1.0 : 0.5)
                 }
+                NavigationLink(destination: RoomAllocationView()) {
+                                    Text("Go to Room Allocation")
+                                        .foregroundColor(.white)
+                                        .frame(width: 325, height: 40)
+                                        .background(Color.blue)
+                                        .cornerRadius(10)
+                                }
+                                .padding(.top, 20)
+                                
+                                
+                                Spacer()
                 
                
-                Spacer()
+                
             }
             .padding()
             .background(Color.solitude)
