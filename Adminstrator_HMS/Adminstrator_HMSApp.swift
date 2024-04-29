@@ -8,7 +8,7 @@
 import SwiftUI
 import Firebase
 
-//@main
+@main
 struct Adminstrator_HMSApp: App {
     @StateObject var viewModel = AuthViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate

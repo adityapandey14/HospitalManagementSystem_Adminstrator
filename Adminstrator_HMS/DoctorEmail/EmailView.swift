@@ -145,7 +145,7 @@ struct EmailView: View {
 }
 
 // SwiftUI App entry point
-@main
+
 struct EmailApp: App {
     var body: some Scene {
         WindowGroup {
