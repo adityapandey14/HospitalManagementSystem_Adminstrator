@@ -12,7 +12,7 @@ struct homepageComplete: View {
     var body: some View {
         NavigationStack {
             TabView {
-                Homepage()
+                InventoryHome()
                     .tabItem {
                         Label("Home", systemImage: "house")
                             .padding(.top)
