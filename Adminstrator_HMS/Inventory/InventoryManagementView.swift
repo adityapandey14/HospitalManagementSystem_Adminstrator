@@ -111,12 +111,6 @@ struct InventoryManagementView: View {
             }
             .padding()
             
-            Button("Show Alert") {
-                showAlert.toggle()
-            }
-            .alert(isPresented: $showAlert) {
-                Alert(title: Text("Alert"), message: Text("Inventory is low!"), dismissButton: .default(Text("OK")))
-            }
         }
     }
 }
