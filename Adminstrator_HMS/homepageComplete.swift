@@ -17,6 +17,11 @@ struct homepageComplete: View {
                         Label("Home", systemImage: "house")
                             .padding(.top)
                     }
+                InputPage()
+                    .tabItem {
+                        Label("Bills", systemImage: "doc.fill")
+                            .padding(.top)
+                    }
 
                 CodeGeneratorView()
                     .tabItem {
