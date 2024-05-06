@@ -21,96 +21,150 @@ struct InventoryManagementView: View {
     
     var body: some View {
         VStack {
-            Picker("Blood Group", selection: $selectedBloodGroupIndex) {
-                ForEach(0 ..< bloodGroups.count) {
-                    Text(self.bloodGroups[$0])
-                }
-            }
-            .pickerStyle(MenuPickerStyle())
-            .padding()
             
-            TextField("Blood Quantity", text: $bloodQuantity)
-                .padding()
+            Text("Manage Inventory")
+                .bold()
+                .font(.system(size: 30))
+                .padding(.bottom, 40)
             
-            Button("Add Blood") {
-                if let quantity = Int(bloodQuantity) {
-                    switch bloodGroups[selectedBloodGroupIndex] {
-                        case "A+":
-                            viewModel.updateBloodAPlus(quantity: quantity){}
-                        case "B+":
-                            viewModel.updateBloodBPlus(quantity: quantity){}
-                        case "AB+":
-                            viewModel.updateBloodABPlus(quantity: quantity){}
-                        case "O+":
-                            viewModel.updateBloodOPlus(quantity: quantity){}
-                        case "A-":
-                            viewModel.updateBloodAMinus(quantity: quantity){}
-                        case "B-":
-                            viewModel.updateBloodBMinus(quantity: quantity){}
-                        case "AB-":
-                            viewModel.updateBloodABMinus(quantity: quantity){}
-                        case "O-":
-                            viewModel.updateBloodOMinus(quantity: quantity){}
-                        default:
-                            break
+            ZStack {
+                
+                RoundedRectangle(cornerRadius: 8)
+                    .frame(width: 379, height: 200)
+                    .foregroundStyle(Color("solitude"))
+                VStack {
+                    
+                    
+                    Text("Manage Blood")
+                        .bold()
+                        .padding(.trailing, 210)
+                        .padding(.top)
+                        .padding(.bottom)
+                        .font(.system(size: 20))
+                    HStack {
+                        Picker("Blood Group", selection: $selectedBloodGroupIndex) {
+                            ForEach(0 ..< bloodGroups.count) {
+                                Text(self.bloodGroups[$0])
+                            }
+                        }
+                        .pickerStyle(MenuPickerStyle())
+                        .padding()
+                        
+                        TextField("Blood Quantity", text: $bloodQuantity)
+                            .padding(.leading, 30)
+                        //                        .frame(height: 60)
+                        
+                        
+                        Button("Add Blood") {
+                            if let quantity = Int(bloodQuantity) {
+                                switch bloodGroups[selectedBloodGroupIndex] {
+                                case "A+":
+                                    viewModel.updateBloodAPlus(quantity: quantity){}
+                                case "B+":
+                                    viewModel.updateBloodBPlus(quantity: quantity){}
+                                case "AB+":
+                                    viewModel.updateBloodABPlus(quantity: quantity){}
+                                case "O+":
+                                    viewModel.updateBloodOPlus(quantity: quantity){}
+                                case "A-":
+                                    viewModel.updateBloodAMinus(quantity: quantity){}
+                                case "B-":
+                                    viewModel.updateBloodBMinus(quantity: quantity){}
+                                case "AB-":
+                                    viewModel.updateBloodABMinus(quantity: quantity){}
+                                case "O-":
+                                    viewModel.updateBloodOMinus(quantity: quantity){}
+                                default:
+                                    break
+                                }
+                                bloodQuantity = ""
+                            }
+                        }
+                        .padding()
                     }
-                    bloodQuantity = ""
-                }
-            }
-            .padding()
-            
-            
-            TextField("Blood Quantity", text: $blooddec)
-                .padding()
-            Button("Blood Used") {
-                if let quantity = Int(blooddec) {
-                    switch bloodGroups[selectedBloodGroupIndex] {
-                        case "A+":
-                            viewModel.updateBloodAPlus(quantity: -(quantity)){}
-                        case "B+":
-                            viewModel.updateBloodBPlus(quantity: -(quantity)){}
-                        case "AB+":
-                            viewModel.updateBloodABPlus(quantity: -(quantity)){}
-                        case "O+":
-                            viewModel.updateBloodOPlus(quantity: -(quantity)){}
-                        case "A-":
-                            viewModel.updateBloodAMinus(quantity: -(quantity)){}
-                        case "B-":
-                            viewModel.updateBloodBMinus(quantity: -(quantity)){}
-                        case "AB-":
-                            viewModel.updateBloodABMinus(quantity: -(quantity)){}
-                        case "O-":
-                            viewModel.updateBloodOMinus(quantity: -(quantity)){}
-                        default:
-                            break
+                    
+                    HStack {
+                        TextField("Blood Quantity", text: $blooddec)
+                            .padding(.leading, 131)
+                        Button("Blood Used") {
+                            if let quantity = Int(blooddec) {
+                                switch bloodGroups[selectedBloodGroupIndex] {
+                                case "A+":
+                                    viewModel.updateBloodAPlus(quantity: -(quantity)){}
+                                case "B+":
+                                    viewModel.updateBloodBPlus(quantity: -(quantity)){}
+                                case "AB+":
+                                    viewModel.updateBloodABPlus(quantity: -(quantity)){}
+                                case "O+":
+                                    viewModel.updateBloodOPlus(quantity: -(quantity)){}
+                                case "A-":
+                                    viewModel.updateBloodAMinus(quantity: -(quantity)){}
+                                case "B-":
+                                    viewModel.updateBloodBMinus(quantity: -(quantity)){}
+                                case "AB-":
+                                    viewModel.updateBloodABMinus(quantity: -(quantity)){}
+                                case "O-":
+                                    viewModel.updateBloodOMinus(quantity: -(quantity)){}
+                                default:
+                                    break
+                                }
+                                bloodQuantity = ""
+                            }
+                        }
+                        .padding()
                     }
-                    bloodQuantity = ""
                 }
             }
-            .padding()
             
-            TextField("Oxygen Tank Quantity", text: $oxygenQuantity)
-                .padding()
-            
-            Button("Add Oxygen Tank") {
-                if let quantity = Int(oxygenQuantity) {
-                    viewModel.updateOxygenTanks(quantity: quantity){}
-                    oxygenQuantity = ""
+            ZStack {
+                
+                RoundedRectangle(cornerRadius: 8)
+                    .frame(width: 379, height: 200)
+                    .foregroundStyle(Color("solitude"))
+                VStack {
+                    Text("Manage Oxygen")
+                        .bold()
+                        .padding(.top)
+                        .font(.system(size: 20))
+                        .padding(.trailing, 190)
+                        .padding(.bottom)
+                    
+                    HStack {
+                        TextField("Number of Tanks", text: $oxygenQuantity)
+                            .padding(.leading, 30)
+                        
+                        Button("Add Tanks") {
+                            if let quantity = Int(oxygenQuantity) {
+                                viewModel.updateOxygenTanks(quantity: quantity){}
+                                oxygenQuantity = ""
+                            }
+                        }
+                        .padding()
+                    }
+                    
+                    HStack {
+                        TextField("Number of Tanks", text: $oxygenQuantitytodec)
+                            .padding(.leading, 30)
+                        
+                        Button("Remove Tanks") {
+                            if let quantity = Int(oxygenQuantitytodec) {
+                                viewModel.updateOxygenTanks(quantity: -(quantity)){}
+                                oxygenQuantity = ""
+                            }
+                        }
+                        .padding()
+                    }
                 }
             }
-            .padding()
-            
-            TextField("Oxygen Tank Quantity to decrease", text: $oxygenQuantitytodec)
-                .padding()
-            
-            Button("Remove Oxygen Tank") {
-                if let quantity = Int(oxygenQuantitytodec) {
-                    viewModel.updateOxygenTanks(quantity: -(quantity)){}
-                    oxygenQuantity = ""
-                }
-            }
-            .padding()
-            
+            .padding(.bottom, 150)
+            .padding(.top)
         }
+        .padding(.top)
+    }
+}
+
+struct InventoryManagementView_Previews: PreviewProvider {
+    static var previews: some View {
+        InventoryManagementView()
     }
 }

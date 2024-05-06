@@ -8,21 +8,69 @@
 import SwiftUI
 
 struct InventoryHome: View {
+    
+    @State private var isHovering = false
     var body: some View {
         NavigationView {
-            VStack {
-                NavigationLink(destination: InventoryView()) {
-                    Text("View Inventory")
-                        .padding()
-                }
+            ZStack {
                 
-                NavigationLink(destination: InventoryManagementView()) {
-                    Text("Manage Inventory")
-                        .padding()
+                LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0.0)]), startPoint: .top, endPoint: .bottom)
+                
+                
+                VStack {
+                    ZStack {
+                        ZStack {
+//                            LinearGradient(gradient: Gradient(colors: [Color.white, Color.gray]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                            RoundedRectangle(cornerRadius: 8)
+                                .frame(width: 350, height: 150)
+                                .foregroundStyle(Color("solitude"))
+                                .opacity(isHovering ? 0.8 : 1.0)
+                        }
+                        NavigationLink(destination: InventoryView()) {
+                            Text("View Inventory")
+                                .bold()
+                                .font(.system(size: 28))
+                                .padding()
+                        }
+                    }
+                    .onHover(perform: { hovering in
+                        self.isHovering = hovering
+                    })
+                    
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .frame(width: 350, height: 150)
+                            .foregroundStyle(Color("solitude"))
+                        NavigationLink(destination: InventoryManagementView()) {
+                            Text("Manage Inventory")
+                                .bold()
+                                .font(.system(size: 28))
+                                .padding()
+                        }
+                    }
+                    
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 8)
+                            .frame(width: 350, height: 150)
+                            .foregroundStyle(Color("solitude"))
+                        NavigationLink(destination: AnalyticsView()) {
+                            Text("View Analytics")
+                                .bold()
+                                .font(.system(size: 28))
+                                .padding()
+                        }
+                    }
                 }
+                .padding(.bottom, 60)
+                .navigationBarTitle("Dashboard")
             }
-            .navigationBarTitle("Hospital Inventory")
         }
     }
 }
 
+struct InventoryHome_Previews: PreviewProvider {
+    static var previews: some View {
+        InventoryHome()
+    }
+}

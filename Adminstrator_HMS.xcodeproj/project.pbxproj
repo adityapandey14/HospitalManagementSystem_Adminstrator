@@ -17,6 +17,7 @@
 		4890D41A2BDF580500EF8750 /* CodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */; };
 		4890D41C2BDF5A6F00EF8750 /* homepageComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */; };
 		48E9A8892BDE9823002360DE /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E9A8882BDE9823002360DE /* EmailView.swift */; };
+		84B953852BE88D13002D62C6 /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B953842BE88D13002D62C6 /* AnalyticsView.swift */; };
 		DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EAF2BD58CF900FAD930 /* User.swift */; };
 		DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */; };
 		DF6B2EBB2BD58E1D00FAD930 /* appFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */; };
@@ -69,6 +70,7 @@
 		4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorView.swift; sourceTree = "<group>"; };
 		4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageComplete.swift; sourceTree = "<group>"; };
 		48E9A8882BDE9823002360DE /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		84B953842BE88D13002D62C6 /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		DF6B2EAF2BD58CF900FAD930 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appFonts.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 			path = DoctorEmail;
 			sourceTree = "<group>";
 		};
+		84B953832BE88CF9002D62C6 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				84B953842BE88D13002D62C6 /* AnalyticsView.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		DF6B2EAD2BD58CD600FAD930 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		DF9B2F282BD26E22009B8C02 = {
 			isa = PBXGroup;
 			children = (
+				84B953832BE88CF9002D62C6 /* Analytics */,
 				DF9B2F332BD26E22009B8C02 /* Adminstrator_HMS */,
 				DF9B2F452BD26E25009B8C02 /* Adminstrator_HMSTests */,
 				DF9B2F4F2BD26E25009B8C02 /* Adminstrator_HMSUITests */,
@@ -384,6 +395,7 @@
 				4721C96D2BE34ED200310CED /* InventoryHome.swift in Sources */,
 				47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */,
 				DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */,
+				84B953852BE88D13002D62C6 /* AnalyticsView.swift in Sources */,
 				4721C96B2BE3469D00310CED /* InventoryManagementView.swift in Sources */,
 				DF9B2F352BD26E22009B8C02 /* Adminstrator_HMSApp.swift in Sources */,
 				4721C9672BE3464D00310CED /* InventoryViewModel.swift in Sources */,
