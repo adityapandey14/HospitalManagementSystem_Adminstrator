@@ -12,6 +12,10 @@
 		4721C9692BE3468800310CED /* InventoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721C9682BE3468800310CED /* InventoryView.swift */; };
 		4721C96B2BE3469D00310CED /* InventoryManagementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721C96A2BE3469D00310CED /* InventoryManagementView.swift */; };
 		4721C96D2BE34ED200310CED /* InventoryHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4721C96C2BE34ED200310CED /* InventoryHome.swift */; };
+		4762BFB72BE88DD200845B96 /* BillModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFB62BE88DD200845B96 /* BillModel.swift */; };
+		4762BFB92BE88DF500845B96 /* BillViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFB82BE88DF500845B96 /* BillViewmodel.swift */; };
+		4762BFBB2BE88E0D00845B96 /* Bill_Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFBA2BE88E0D00845B96 /* Bill_Entry.swift */; };
+		4762BFBD2BE8991900845B96 /* BillListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFBC2BE8991900845B96 /* BillListView.swift */; };
 		47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */; };
 		47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B82BDA34280008DAE9 /* FirebaseManager.swift */; };
 		4890D41A2BDF580500EF8750 /* CodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */; };
@@ -64,6 +68,10 @@
 		4721C96A2BE3469D00310CED /* InventoryManagementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryManagementView.swift; sourceTree = "<group>"; };
 		4721C96C2BE34ED200310CED /* InventoryHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryHome.swift; sourceTree = "<group>"; };
 		474ADBDC2BD8EA3F00A31ADB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.4.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		4762BFB62BE88DD200845B96 /* BillModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillModel.swift; sourceTree = "<group>"; };
+		4762BFB82BE88DF500845B96 /* BillViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewmodel.swift; sourceTree = "<group>"; };
+		4762BFBA2BE88E0D00845B96 /* Bill_Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill_Entry.swift; sourceTree = "<group>"; };
+		4762BFBC2BE8991900845B96 /* BillListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListView.swift; sourceTree = "<group>"; };
 		47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAlloocationView.swift; sourceTree = "<group>"; };
 		47B685B82BDA34280008DAE9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorView.swift; sourceTree = "<group>"; };
@@ -133,6 +141,17 @@
 			path = Inventory;
 			sourceTree = "<group>";
 		};
+		4762BFB52BE88DC000845B96 /* Bills */ = {
+			isa = PBXGroup;
+			children = (
+				4762BFB62BE88DD200845B96 /* BillModel.swift */,
+				4762BFB82BE88DF500845B96 /* BillViewmodel.swift */,
+				4762BFBA2BE88E0D00845B96 /* Bill_Entry.swift */,
+				4762BFBC2BE8991900845B96 /* BillListView.swift */,
+			);
+			path = Bills;
+			sourceTree = "<group>";
+		};
 		48A05C052BDA4D6100719DA1 /* DoctorEmail */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +197,7 @@
 		DF9B2F332BD26E22009B8C02 /* Adminstrator_HMS */ = {
 			isa = PBXGroup;
 			children = (
+				4762BFB52BE88DC000845B96 /* Bills */,
 				4721C9622BE3447700310CED /* Inventory */,
 				DF9B2F5F2BD26E58009B8C02 /* GoogleService-Info.plist */,
 				DF9B2F342BD26E22009B8C02 /* Adminstrator_HMSApp.swift */,
@@ -373,6 +393,8 @@
 			files = (
 				48E9A8892BDE9823002360DE /* EmailView.swift in Sources */,
 				4890D41A2BDF580500EF8750 /* CodeGeneratorView.swift in Sources */,
+				4762BFB72BE88DD200845B96 /* BillModel.swift in Sources */,
+				4762BFBB2BE88E0D00845B96 /* Bill_Entry.swift in Sources */,
 				4890D41C2BDF5A6F00EF8750 /* homepageComplete.swift in Sources */,
 				DF6B2ED92BD59CA100FAD930 /* ProfileInputView.swift in Sources */,
 				DF9B2F372BD26E22009B8C02 /* ContentView.swift in Sources */,
@@ -380,6 +402,7 @@
 				DF6B2EBB2BD58E1D00FAD930 /* appFonts.swift in Sources */,
 				47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */,
 				DF6B2ED32BD59C1700FAD930 /* AuthViewModel.swift in Sources */,
+				4762BFBD2BE8991900845B96 /* BillListView.swift in Sources */,
 				4721C9642BE3449400310CED /* Inventory_Model.swift in Sources */,
 				4721C96D2BE34ED200310CED /* InventoryHome.swift in Sources */,
 				47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */,
@@ -388,6 +411,7 @@
 				DF9B2F352BD26E22009B8C02 /* Adminstrator_HMSApp.swift in Sources */,
 				4721C9672BE3464D00310CED /* InventoryViewModel.swift in Sources */,
 				4721C9692BE3468800310CED /* InventoryView.swift in Sources */,
+				4762BFB92BE88DF500845B96 /* BillViewmodel.swift in Sources */,
 				DF6B2ED72BD59C4600FAD930 /* loginView.swift in Sources */,
 				DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */,
 			);
