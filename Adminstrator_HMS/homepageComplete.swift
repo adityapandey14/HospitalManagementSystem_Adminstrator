@@ -19,7 +19,7 @@ struct homepageComplete: View {
                     }
                 InputPage()
                     .tabItem {
-                        Label("Home", systemImage: "house")
+                        Label("Bills", systemImage: "doc.fill")
                             .padding(.top)
                     }
 
