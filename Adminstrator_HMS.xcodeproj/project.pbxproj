@@ -16,6 +16,9 @@
 		4762BFB92BE88DF500845B96 /* BillViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFB82BE88DF500845B96 /* BillViewmodel.swift */; };
 		4762BFBB2BE88E0D00845B96 /* Bill_Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFBA2BE88E0D00845B96 /* Bill_Entry.swift */; };
 		4762BFBD2BE8991900845B96 /* BillListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFBC2BE8991900845B96 /* BillListView.swift */; };
+		4762BFE32BEA32A500845B96 /* Ann_Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFE22BEA32A500845B96 /* Ann_Model.swift */; };
+		4762BFE52BEA33C300845B96 /* Ann_ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFE42BEA33C300845B96 /* Ann_ViewModel.swift */; };
+		4762BFE72BEA33EA00845B96 /* Ann_Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4762BFE62BEA33EA00845B96 /* Ann_Input.swift */; };
 		47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */; };
 		47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B82BDA34280008DAE9 /* FirebaseManager.swift */; };
 		4890D41A2BDF580500EF8750 /* CodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */; };
@@ -73,6 +76,9 @@
 		4762BFB82BE88DF500845B96 /* BillViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillViewmodel.swift; sourceTree = "<group>"; };
 		4762BFBA2BE88E0D00845B96 /* Bill_Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bill_Entry.swift; sourceTree = "<group>"; };
 		4762BFBC2BE8991900845B96 /* BillListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillListView.swift; sourceTree = "<group>"; };
+		4762BFE22BEA32A500845B96 /* Ann_Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ann_Model.swift; sourceTree = "<group>"; };
+		4762BFE42BEA33C300845B96 /* Ann_ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ann_ViewModel.swift; sourceTree = "<group>"; };
+		4762BFE62BEA33EA00845B96 /* Ann_Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ann_Input.swift; sourceTree = "<group>"; };
 		47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAlloocationView.swift; sourceTree = "<group>"; };
 		47B685B82BDA34280008DAE9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorView.swift; sourceTree = "<group>"; };
@@ -154,6 +160,16 @@
 			path = Bills;
 			sourceTree = "<group>";
 		};
+		4762BFE12BEA328600845B96 /* Announcement */ = {
+			isa = PBXGroup;
+			children = (
+				4762BFE22BEA32A500845B96 /* Ann_Model.swift */,
+				4762BFE42BEA33C300845B96 /* Ann_ViewModel.swift */,
+				4762BFE62BEA33EA00845B96 /* Ann_Input.swift */,
+			);
+			path = Announcement;
+			sourceTree = "<group>";
+		};
 		48A05C052BDA4D6100719DA1 /* DoctorEmail */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +224,7 @@
 		DF9B2F332BD26E22009B8C02 /* Adminstrator_HMS */ = {
 			isa = PBXGroup;
 			children = (
+				4762BFE12BEA328600845B96 /* Announcement */,
 				4762BFB52BE88DC000845B96 /* Bills */,
 				4721C9622BE3447700310CED /* Inventory */,
 				DF9B2F5F2BD26E58009B8C02 /* GoogleService-Info.plist */,
@@ -416,6 +433,7 @@
 				4762BFBD2BE8991900845B96 /* BillListView.swift in Sources */,
 				4721C9642BE3449400310CED /* Inventory_Model.swift in Sources */,
 				4721C96D2BE34ED200310CED /* InventoryHome.swift in Sources */,
+				4762BFE72BEA33EA00845B96 /* Ann_Input.swift in Sources */,
 				47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */,
 				DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */,
 				84B953852BE88D13002D62C6 /* AnalyticsView.swift in Sources */,
@@ -424,8 +442,10 @@
 				4721C9672BE3464D00310CED /* InventoryViewModel.swift in Sources */,
 				4721C9692BE3468800310CED /* InventoryView.swift in Sources */,
 				4762BFB92BE88DF500845B96 /* BillViewmodel.swift in Sources */,
+				4762BFE52BEA33C300845B96 /* Ann_ViewModel.swift in Sources */,
 				DF6B2ED72BD59C4600FAD930 /* loginView.swift in Sources */,
 				DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */,
+				4762BFE32BEA32A500845B96 /* Ann_Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

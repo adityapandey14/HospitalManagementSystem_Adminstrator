@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var viewModel : AuthViewModel
     @ObservedObject var inventoryViewModel = InventoryViewModel()
+    @ObservedObject var announcementViewModel = AnnouncementsViewModel()
     var body: some View {
         //Imageview() use this for image upload and retrival
         Group {

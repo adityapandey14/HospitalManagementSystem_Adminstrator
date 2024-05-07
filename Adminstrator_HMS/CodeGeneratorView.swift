@@ -21,6 +21,7 @@ struct CodeGeneratorView: View {
     @State private var errorMessage: String? = nil
 
     var body: some View {
+       
         VStack(spacing: 16) {
             Text("Generated Code:")
                 .font(.headline)
@@ -53,8 +54,10 @@ struct CodeGeneratorView: View {
                 Text(errorMessage)
                     .foregroundColor(.red)
             }
+            
         }
         .padding()
+        
     }
 
     // Function to generate and store a random code, returning the generated code

@@ -101,6 +101,9 @@ struct EmailView: View {
     
     var body: some View {
         VStack(spacing: 16) {
+            VStack{
+                AddAnnouncementView()
+            }
             TextField("From Email", text: $viewModel.fromEmail)
                 .keyboardType(.emailAddress)
                 .autocapitalization(.none)

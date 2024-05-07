@@ -61,6 +61,7 @@ struct InventoryHome: View {
                                 .padding()
                         }
                     }
+                    
                 }
                 .padding(.bottom, 60)
                 .navigationBarTitle("Dashboard")
