@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct homepageComplete: View {
+    @State private var alertMessage: String = ""
+    @State private var showingAlert = false
     var body: some View {
         NavigationStack {
             TabView {
@@ -42,6 +44,15 @@ struct homepageComplete: View {
                
                 
                 
+            }
+            .onReceive(NotificationCenter.default.publisher(for: NSNotification.Name("LowStockAlert"))) { notification in
+                if let message = notification.object as? String {
+                    alertMessage = message
+                    showingAlert = true
+                }
+            }
+            .alert(isPresented: $showingAlert) {
+                Alert(title: Text("Low Stock"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
             }
 //            .accentColor(Color.accent)
         }
