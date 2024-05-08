@@ -13,6 +13,7 @@ struct Adminstrator_HMSApp: App {
     @StateObject var viewModel = AuthViewModel()
     @StateObject var billviewModel = BillViewModel()
     @StateObject var announcementViewModel = AnnouncementsViewModel()
+    @StateObject var inventoryViewModel = InventoryViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
      init(){ //to make tab bar have green accent on selected bar icon
         // FirebaseApp.configure()
@@ -30,6 +31,7 @@ struct Adminstrator_HMSApp: App {
                  .environmentObject(viewModel)
                  .environmentObject(billviewModel)
                  .environmentObject(announcementViewModel)
+                 .environmentObject(inventoryViewModel)
          }
      }
 }

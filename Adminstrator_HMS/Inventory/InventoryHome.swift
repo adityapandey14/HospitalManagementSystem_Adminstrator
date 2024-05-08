@@ -54,7 +54,7 @@ struct InventoryHome: View {
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 350, height: 150)
                             .foregroundStyle(Color("solitude"))
-                        NavigationLink(destination: AnalyticsView()) {
+                        NavigationLink(destination: Analytics()) {
                             Text("View Analytics")
                                 .bold()
                                 .font(.system(size: 28))
