@@ -67,6 +67,44 @@ class FirebaseManager: ObservableObject {
                 }
             }
     }
+    func getBookedRoomsCount(completion: @escaping (Int) -> Void) {
+        var uniqueRoomNumbers = Set<String>()
+        
+        db.collection("Rooms")
+            .whereField("availability", isEqualTo: false)
+            .getDocuments { snapshot, error in
+                if let error = error {
+                    print("Error fetching booked rooms: \(error.localizedDescription)")
+                    completion(0)
+                } else {
+                    guard let documents = snapshot?.documents else {
+                        completion(0)
+                        return
+                    }
+                    
+                    for document in documents {
+                        if let roomNumber = document.data()["number"] as? String {
+                            uniqueRoomNumbers.insert(roomNumber)
+                        }
+                    }
+                    
+                    completion(uniqueRoomNumbers.count)
+                }
+            }
+    }
+
+    func getAvailableRoomsCount(completion: @escaping (Int) -> Void) {
+            db.collection("Rooms")
+                .whereField("availability", isEqualTo: true)
+                .getDocuments { snapshot, error in
+                    if let error = error {
+                        print("Error fetching available rooms: \(error.localizedDescription)")
+                        completion(0)
+                    } else {
+                        completion(snapshot?.documents.count ?? 0)
+                    }
+                }
+        }
 
     
     }
