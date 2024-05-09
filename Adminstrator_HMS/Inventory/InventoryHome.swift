@@ -15,10 +15,7 @@ struct InventoryHome: View {
     @State private var isHovering = false
     @Environment(\.colorScheme) var colorScheme
     
-    @ObservedObject var departmentViewModel = DepartmentViewModel()
-    @ObservedObject var doctorviewModel = DoctorViewModel()
-    @State private var selectedSkillType: DepartmentDetail?
-    @ObservedObject var doctorViewModel = DoctorViewModel.shared
+  
 
     var body: some View {
         NavigationStack {
@@ -92,35 +89,14 @@ struct InventoryHome: View {
                         }
                         .background(Color(uiColor: .secondarySystemBackground))
                                                     
-                        ScrollView(.horizontal) {
-                    
-                                        ForEach(departmentViewModel.departmentTypes) { departmentType in
-                                            HStack{
-      
-                                                ForEach(departmentType.specialityDetails) { detail in
-    
-                                                        if let doctor = doctorViewModel.doctorDetails.first(where: { $0.id == detail.doctorId }) {
-                                                            topDoctorCard(fullName: doctor.fullName, specialist: doctor.speciality, doctorUid: doctor.id, imageUrl: doctor.profilephoto ?? "", doctorDetail: doctor)
-                                                        }
-           
-                                                    }
-                                
-                                            }
-                                            .padding()
-                                            .onAppear() {
-                                                selectedSkillType = departmentType
-                                                departmentViewModel.fetchSpecialityOwnerDetails(for: departmentType.id)
-                                            }
-                                        }
-                                   
-                           
-                        } //End of the scroll view
-                            .onAppear() {
-                                Task {
-                                   await doctorviewModel.fetchDoctorDetails()
-                                }
-                            }
-                        
+                        Text("Doctors")
+                            .bold()
+//                            .padding()
+                            .font(.system(size: 20))
+                            .padding(.trailing, 280)
+                            .padding(.top)
+                            .padding(.bottom)
+                        ScrollViewDoctor()
                         
                         NavigationLink(destination: Analytics()) {
                             Text("View Analytics")
@@ -131,6 +107,7 @@ struct InventoryHome: View {
                                 .background(Color.blue)
                                 .cornerRadius(10)
                         }
+                        .padding(.top)
                     }
                     .padding(.bottom, 60)
                 }
