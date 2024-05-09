@@ -23,9 +23,7 @@
 		47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */; };
 		47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B82BDA34280008DAE9 /* FirebaseManager.swift */; };
 		482821962BECBC5E00A88D20 /* MAIL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482821952BECBC5E00A88D20 /* MAIL.swift */; };
-		4890D41A2BDF580500EF8750 /* CodeGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */; };
 		4890D41C2BDF5A6F00EF8750 /* homepageComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */; };
-		48E9A8892BDE9823002360DE /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E9A8882BDE9823002360DE /* EmailView.swift */; };
 		DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EAF2BD58CF900FAD930 /* User.swift */; };
 		DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */; };
 		DF6B2EBB2BD58E1D00FAD930 /* appFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */; };
@@ -84,9 +82,7 @@
 		47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAlloocationView.swift; sourceTree = "<group>"; };
 		47B685B82BDA34280008DAE9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		482821952BECBC5E00A88D20 /* MAIL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAIL.swift; sourceTree = "<group>"; };
-		4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeGeneratorView.swift; sourceTree = "<group>"; };
 		4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageComplete.swift; sourceTree = "<group>"; };
-		48E9A8882BDE9823002360DE /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		DF6B2EAF2BD58CF900FAD930 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appFonts.swift; sourceTree = "<group>"; };
@@ -181,14 +177,6 @@
 			path = Mail;
 			sourceTree = "<group>";
 		};
-		48A05C052BDA4D6100719DA1 /* DoctorEmail */ = {
-			isa = PBXGroup;
-			children = (
-				48E9A8882BDE9823002360DE /* EmailView.swift */,
-			);
-			path = DoctorEmail;
-			sourceTree = "<group>";
-		};
 		DF6B2EAD2BD58CD600FAD930 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,9 +224,7 @@
 				4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */,
 				DF6B2EDA2BD59D4600FAD930 /* Homepage.swift */,
 				482821942BECBC5600A88D20 /* Mail */,
-				4890D4192BDF580500EF8750 /* CodeGeneratorView.swift */,
 				47B685B82BDA34280008DAE9 /* FirebaseManager.swift */,
-				48A05C052BDA4D6100719DA1 /* DoctorEmail */,
 				DF6B2EAD2BD58CD600FAD930 /* Authentication */,
 				DF9B2F382BD26E24009B8C02 /* Assets.xcassets */,
 				DF9B2F3A2BD26E24009B8C02 /* Adminstrator_HMS.entitlements */,
@@ -422,8 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48E9A8892BDE9823002360DE /* EmailView.swift in Sources */,
-				4890D41A2BDF580500EF8750 /* CodeGeneratorView.swift in Sources */,
 				4762BFB72BE88DD200845B96 /* BillModel.swift in Sources */,
 				4762BFBB2BE88E0D00845B96 /* Bill_Entry.swift in Sources */,
 				4890D41C2BDF5A6F00EF8750 /* homepageComplete.swift in Sources */,

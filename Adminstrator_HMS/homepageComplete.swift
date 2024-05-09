@@ -30,11 +30,6 @@ struct homepageComplete: View {
                         Label("codeGenerator" , systemImage: "calendar")
                     }
                 
-                EmailView()
-                    .tabItem {
-                        Label("Email" , systemImage: "shared.with.you")
-                    }
-                
                 
                 RoomAllocationView()
                     .tabItem {
