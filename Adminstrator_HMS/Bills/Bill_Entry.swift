@@ -11,9 +11,9 @@ struct InputPage: View {
     @EnvironmentObject var viewModel: BillViewModel
 
     @State private var isShowingBillsList = false
-    @State private var hospitalName = ""
-    @State private var hospitalAddress = ""
-    @State private var hospitalContactInfo = ""
+    @State private var hospitalName = "MedNex"
+    @State private var hospitalAddress = "India"
+    @State private var hospitalContactInfo = "+91 6767545476"
     @State private var patientID = ""
     @State private var doctorID = ""
     @State private var billingDate = Date()
@@ -38,40 +38,26 @@ struct InputPage: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 8)
                         .foregroundStyle(Color(uiColor: .secondarySystemBackground))
-                        .frame(width: 360, height: 150)
-                    VStack {
-                        Text("Hospital Information")
-                            .font(.headline)
-                        TextField("Hospital Name", text: $hospitalName)
-                            .padding(.leading, 10)
-                            .frame(width: 330)
-                        TextField("Hospital Address", text: $hospitalAddress)
-                            .padding(.leading, 10)
-                            .frame(width: 330)
-                        TextField("Hospital Contact Info", text: $hospitalContactInfo)
-                            .padding(.leading, 10)
-                            .frame(width: 330)
-                    }
-                }
-                .padding(.bottom)
-                ZStack {
-                    RoundedRectangle(cornerRadius: 8)
-                        .foregroundStyle(Color(uiColor: .secondarySystemBackground))
                         .frame(width: 360, height: 140)
                     VStack {
-                        Text("Patient & Doctor Information")
+                        Text("Patient Information")
                             .font(.headline)
                             .padding(.bottom, 10)
                         VStack {
-                            TextField("Patient ID", text: $patientID)
+                            Picker("Select Patient", selection: $patientID) {
+                                if patientID.isEmpty {
+                                    Text("Select a Patient")
+                                        .foregroundColor(.gray)
+                                        .tag("")
+                                }
+                                ForEach(viewModel.patients, id: \.id) { patient in
+                                    Text(patient.name).tag(patient.id)
+                                }
+                            }
+                            .pickerStyle(MenuPickerStyle())
                                 .padding(.leading, 10)
                                 .frame(width: 330)
 //                                .background(Color("grad3"))
-                                .cornerRadius(5)
-                            TextField("Doctor ID", text: $doctorID)
-                                .padding(.leading, 10)
-                                .frame(width: 330)
-                                .background(Color(uiColor: .secondarySystemBackground))
                                 .cornerRadius(5)
                         }
                         .padding(.bottom, 10)
@@ -123,8 +109,11 @@ struct InputPage: View {
                 .padding()
             }
             .padding()
+            
         }
         .padding(.top, 20)
+        .onAppear{viewModel.fetchPatients()}
+        
     }
 
     private func addItem() {
@@ -135,7 +124,6 @@ struct InputPage: View {
         let bill = Bill(hospitalName: hospitalName, hospitalAddress: hospitalAddress, hospitalContactInfo: hospitalContactInfo, patientID: patientID, doctorID: doctorID, billingDate: billingDate, items: items, totalAmountDue: totalAmountDue, amountPaid: amountPaid, paymentMethod: paymentMethod, paymentDate: paymentDate, outstandingBalance: outstandingBalance, notes: notes, discountsOrAdjustments: discountsOrAdjustments, taxes: taxes, referralInfo: referralInfo)
         viewModel.addBill(bill) // Call addBill function to save the bill
     }
-
 
 }
 
