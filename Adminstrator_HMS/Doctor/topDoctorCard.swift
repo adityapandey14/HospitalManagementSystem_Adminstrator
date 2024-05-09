@@ -58,9 +58,11 @@ struct topDoctorCard : View {
                         Text("\(fullName)")
                             .font(AppFont.mediumSemiBold)
                             .padding(.top)
+                            .foregroundStyle(Color("black"))
                         
                         Text("\(specialist)")
                             .font(AppFont.smallReg)
+                            .foregroundStyle(Color("black"))
                             
                         
                         HStack{
@@ -71,19 +73,22 @@ struct topDoctorCard : View {
                         
                                 Text("\(averageRating, specifier: "%.1f") ⭐️")
                                     .font(AppFont.smallReg)
+                                    .foregroundStyle(Color("black"))
                         
                                 Text("\(reviewsForSkillOwner.count) Review\(reviewsForSkillOwner.count == 1 ? "" : "s")")
                                     .font(AppFont.smallReg)
+                                    .foregroundStyle(Color("black"))
                             } else {
                                 Text("no reviews")
                                     .font(AppFont.smallReg)
-                                    .foregroundColor(.black).opacity(0.3)
+                                    .foregroundColor(Color("black")).opacity(0.3)
                 
                             }
                             Spacer()
                         }
                         .padding(.bottom)
                         .font(AppFont.smallReg)
+                        .foregroundStyle(Color("black"))
                         .onAppear(){
                             reviewViewModel.fetchReviewDetailByDoctorId(doctorId: doctorDetail.id)
                         }
@@ -97,7 +102,7 @@ struct topDoctorCard : View {
             }
             .frame(maxWidth: .infinity, maxHeight: 110)
             .foregroundColor(Color.black)
-            .background(Color.white)
+            .background(Color(uiColor: .secondarySystemBackground))
             .cornerRadius(10)
             .padding(.horizontal,20)
         }

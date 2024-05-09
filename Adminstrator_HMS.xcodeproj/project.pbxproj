@@ -29,6 +29,7 @@
 		4881768A2BECF9AB00CF3F00 /* DoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488176892BECF9AB00CF3F00 /* DoctorProfile.swift */; };
 		4881768C2BECF9BA00CF3F00 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881768B2BECF9BA00CF3F00 /* ReviewModel.swift */; };
 		4890D41C2BDF5A6F00EF8750 /* homepageComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */; };
+		84BE70602BECFCCF00743102 /* ScrollViewDoctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE705F2BECFCCF00743102 /* ScrollViewDoctor.swift */; };
 		DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EAF2BD58CF900FAD930 /* User.swift */; };
 		DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */; };
 		DF6B2EBB2BD58E1D00FAD930 /* appFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */; };
@@ -93,6 +94,7 @@
 		488176892BECF9AB00CF3F00 /* DoctorProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoctorProfile.swift; sourceTree = "<group>"; };
 		4881768B2BECF9BA00CF3F00 /* ReviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageComplete.swift; sourceTree = "<group>"; };
+		84BE705F2BECFCCF00743102 /* ScrollViewDoctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewDoctor.swift; sourceTree = "<group>"; };
 		DF6B2EAF2BD58CF900FAD930 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
 		DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appFonts.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				488176872BECF99300CF3F00 /* DoctorModel.swift */,
 				488176892BECF9AB00CF3F00 /* DoctorProfile.swift */,
 				4881768B2BECF9BA00CF3F00 /* ReviewModel.swift */,
+				84BE705F2BECFCCF00743102 /* ScrollViewDoctor.swift */,
 			);
 			path = Doctor;
 			sourceTree = "<group>";
@@ -449,6 +452,7 @@
 				4721C96D2BE34ED200310CED /* InventoryHome.swift in Sources */,
 				488176842BECF95100CF3F00 /* topDoctorCard.swift in Sources */,
 				4881768C2BECF9BA00CF3F00 /* ReviewModel.swift in Sources */,
+				84BE70602BECFCCF00743102 /* ScrollViewDoctor.swift in Sources */,
 				4762BFE72BEA33EA00845B96 /* Ann_Input.swift in Sources */,
 				47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */,
 				DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */,
