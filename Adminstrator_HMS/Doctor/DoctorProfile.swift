@@ -147,11 +147,11 @@ struct DoctorProfile: View {
 //                        Text("Select Schedule")
 //                            .padding()
                         
-                        HStack{
+                        VStack{
                            
-                            //Calendar Code will be here
+                            ReviewListView(doctorId: doctor.id)
                             
-                        } //End of HStack
+                        }
                    
                         
                         
@@ -170,25 +170,60 @@ struct DoctorProfile: View {
     }
 }
 
-struct DoctorProfileView_Previews: PreviewProvider {
+//struct DoctorProfileView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        
+//        let dummyDoctor = DoctorModel(
+//            id: "1",
+//            fullName: "Dr. Jane Doe",
+//            descript: "Expert in cardiology",
+//            gender: "Female",
+//            mobileno: "1234567890",
+//            experience: "10 years",
+//            qualification: "MD, Cardiology",
+//            dob: Date(timeIntervalSince1970: 0),  // January 1, 1970
+//            address: "123 Main St, Springfield",
+//            pincode: "123456",
+//            department: "Cardiology",
+//            speciality: "Cardiologist",
+//            cabinNo: "101",
+//            profilephoto: nil  // Can use an actual URL if desired
+//        )
+//        DoctorProfile(imageUrl: "www.google.com" , fullName: "Aditya" , specialist: "specialist", doctor: dummyDoctor)
+//    }
+//}
+
+
+
+struct ReviewListView: View {
+    @ObservedObject var reviewViewModel = ReviewViewModel.shared
+    var doctorId: String
+
+    var body: some View {
+        VStack {
+            ForEach(reviewViewModel.reviewDetails) { review in
+                VStack(alignment: .leading) {
+                    
+                    Text("\(String(repeating: "⭐️", count: review.ratingStar))")
+                        .font(AppFont.actionButton)
+                    
+                    Text(" \(review.comment)")
+                        .font(.headline)
+                   
+                    
+                }
+                .padding(.vertical, 5)
+            }
+            .padding()
+        }
+        .onAppear {
+            reviewViewModel.fetchReviewDetailByDoctorId(doctorId: doctorId)
+        }
+    }
+}
+
+struct ReviewListView_Previews: PreviewProvider {
     static var previews: some View {
-        
-        let dummyDoctor = DoctorModel(
-            id: "1",
-            fullName: "Dr. Jane Doe",
-            descript: "Expert in cardiology",
-            gender: "Female",
-            mobileno: "1234567890",
-            experience: "10 years",
-            qualification: "MD, Cardiology",
-            dob: Date(timeIntervalSince1970: 0),  // January 1, 1970
-            address: "123 Main St, Springfield",
-            pincode: "123456",
-            department: "Cardiology",
-            speciality: "Cardiologist",
-            cabinNo: "101",
-            profilephoto: nil  // Can use an actual URL if desired
-        )
-        DoctorProfile(imageUrl: "www.google.com" , fullName: "Aditya" , specialist: "specialist", doctor: dummyDoctor)
+        ReviewListView(doctorId: "cXlNrV7VNYTmCmYaibqynU45Avu1")
     }
 }
