@@ -75,9 +75,11 @@ struct MAIL: View {
     var body: some View {
         VStack() {
             
-            Text("Mail Sender")
+            Text("Unique Code Sender")
                 .bold()
-                .padding()
+                .font(.system(size: 29))
+//                .padding(.bottom, 50)
+                .padding(.trailing, 100)
             
 //            Text("Generated Code:")
 //                .font(.headline)
@@ -112,31 +114,47 @@ struct MAIL: View {
 //            }
 
             // TextField for entering the email address
-            TextField("Enter email address", text: $mailId)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .autocapitalization(.none) //DO NOT REMOVE
-                .padding()
-
-            // Button to send the email
-            Button("Send Email") {
-                Task {
-                    do {
-                        generatedCode = try await generateAndStoreRandomCode()
-                        errorMessage = nil
-                        print(generatedCode)
-                    } catch {
-                        errorMessage = "Error storing code: \(error.localizedDescription)"
-                    }
-                }
+            VStack {
+                TextField("Enter Doctor's email", text: $mailId)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .autocapitalization(.none) //DO NOT REMOVE
+                    .padding()
+//                    .background(Color(uiColor: .secondarySystemBackground))
                 
-                presentMailCompose()
+                HStack {
+                    Image(systemName: "info.circle")
+                        .frame(width: 5, height: 5)
+//                    Spacer()
+//                        .padding()
+                    Text("Send a one-time code for doctor's sign-up")
+                        .font(.system(size: 12))
+                        .padding(.leading, 5)
+                }
+                .padding(.trailing, 85)
+//                .padding(.leading, 20)
+                // Button to send the email
+                Button("Send") {
+                    Task {
+                        do {
+                            generatedCode = try await generateAndStoreRandomCode()
+                            errorMessage = nil
+                            print(generatedCode)
+                        } catch {
+                            errorMessage = "Error storing code: \(error.localizedDescription)"
+                        }
+                    }
+                    
+                    presentMailCompose()
+                }
+                .padding()
+                .background(Color(uiColor: .secondarySystemBackground))
+                .foregroundColor(Color("AccentColor 1"))
+                .cornerRadius(8)
+                .padding(.top, 30)
             }
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(8)
+            .padding(.bottom, 250)
         }
-        .padding()
+        .padding(.bottom, 120)
     }
 
     func generateRandomCode() -> String {

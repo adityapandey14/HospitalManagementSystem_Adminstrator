@@ -21,19 +21,19 @@ struct homepageComplete: View {
                     }
                 InputPage()
                     .tabItem {
-                        Label("Bills", systemImage: "doc.fill")
+                        Label("Bills", systemImage: "dollarsign.circle")
                             .padding(.top)
                     }
 
                 MAIL()
                     .tabItem {
-                        Label("codeGenerator" , systemImage: "calendar")
+                        Label("Unique Code" , systemImage: "mail")
                     }
                 
                 
                 RoomAllocationView()
                     .tabItem {
-                        Label("Rooms" , systemImage: "shared.with.you")
+                        Label("Rooms" , systemImage: "bed.double")
                     }
                 
                

@@ -33,3 +33,7 @@ struct AddAnnouncementView: View {
     }
 }
 
+#Preview {
+    AddAnnouncementView()
+}
+

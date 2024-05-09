@@ -36,11 +36,11 @@ struct RoomAllocationView: View {
                             .font(.system(size: 25))
                         HStack{
                             Text("Patient ID")
-                                .foregroundColor(Color(red:115/255, green:151/255, blue:180/255))
+                                .foregroundColor(Color("AccentColor 1"))
                             TextField("Enter PatientID", text: $patientIDInput)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .cornerRadius(20)
-                                .foregroundColor(Color(red:115/255, green:151/255, blue:180/255))
+                                .foregroundColor(Color("AccentColor 1"))
                                 .padding()
                             
                         }
