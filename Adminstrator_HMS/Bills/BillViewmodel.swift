@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 
 class BillViewModel: ObservableObject {
+    @Published var patients = [Patient]()
     @Published var bills = [Bill]()
     private var db = Firestore.firestore()
 
@@ -17,6 +18,21 @@ class BillViewModel: ObservableObject {
             let _ = try db.collection("bills").addDocument(from: bill)
         } catch {
             print("Error adding bill: \(error.localizedDescription)")
+        }
+    }
+    
+    func fetchPatients() {
+        db.collection("patient").addSnapshotListener { (querySnapshot, error) in
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            self.patients = documents.map { queryDocumentSnapshot -> Patient in
+                let data = queryDocumentSnapshot.data()
+                let id = queryDocumentSnapshot.documentID
+                let name = data["fullName"] as? String ?? ""
+                return Patient(id: id, name:name)
+            }
         }
     }
 

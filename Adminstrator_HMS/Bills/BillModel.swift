@@ -43,3 +43,9 @@ struct Bill: Identifiable, Codable {
     var taxes: Double?
     var referralInfo: String?
 }
+
+struct Patient {
+    let id: String
+    let name: String
+    // Add more details as needed
+}
