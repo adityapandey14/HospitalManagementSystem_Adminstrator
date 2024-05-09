@@ -30,10 +30,10 @@ struct homepageComplete: View {
                         Label("Unique Code" , systemImage: "mail")
                     }
                 
-                AddAnnouncementView()
-                    .tabItem {
-                        Label("Notices", systemImage: "megaphone")
-                    }
+//                AddAnnouncementView()
+//                    .tabItem {
+//                        Label("Notices", systemImage: "megaphone")
+//                    }
                 RoomAllocationView()
                     .tabItem {
                         Label("Rooms" , systemImage: "bed.double")

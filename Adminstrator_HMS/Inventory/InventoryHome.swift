@@ -22,6 +22,7 @@ struct InventoryHome: View {
                             .resizable()
                             .frame(width: 50, height: 50)
                             .padding(.top)
+                        
                         VStack(alignment: .leading) {
                             Text(greeting)
                                 .font(.headline)
@@ -30,6 +31,13 @@ struct InventoryHome: View {
                                 }
                             Text("Admin")
 
+                        }
+                        Spacer()
+                        NavigationLink(destination: AddAnnouncementView()) {
+                            Image(systemName: "megaphone")
+                                .resizable()
+                                .frame(width: 23, height: 25)
+                                .foregroundStyle(Color("black"))
                         }
                     }
                     .padding()
