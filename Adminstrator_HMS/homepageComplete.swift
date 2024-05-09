@@ -25,7 +25,7 @@ struct homepageComplete: View {
                             .padding(.top)
                     }
 
-                CodeGeneratorView()
+                MAIL()
                     .tabItem {
                         Label("codeGenerator" , systemImage: "calendar")
                     }
