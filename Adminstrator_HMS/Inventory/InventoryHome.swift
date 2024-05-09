@@ -8,70 +8,128 @@
 import SwiftUI
 
 struct InventoryHome: View {
-    
+    @EnvironmentObject var viewModel: InventoryViewModel
+    @State private var greeting: String = ""
     @State private var isHovering = false
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
-        NavigationView {
-            ZStack {
-                
-//                LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0.0)]), startPoint: .top, endPoint: .bottom)
-                
-                
-                VStack {
-                    ZStack {
-                        ZStack {
-//                            LinearGradient(gradient: Gradient(colors: [Color.white, Color.gray]), startPoint: .topLeading, endPoint: .bottomTrailing)
-                            RoundedRectangle(cornerRadius: 8)
-                                .frame(width: 350, height: 150)
-                                .foregroundStyle(Color(uiColor: .secondarySystemBackground))
-                                .opacity(isHovering ? 0.8 : 1.0)
-                        }
-                        NavigationLink(destination: InventoryView()) {
-                            Text("View Inventory")
-                                .bold()
-                                .font(.system(size: 28))
-                                .padding()
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 20) {
+                    HStack(spacing: 10) {
+                        Image(colorScheme == .dark ? "homePageLogoBlue" : "mednexLogoSmall")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .padding(.top)
+                        VStack(alignment: .leading) {
+                            Text(greeting)
+                                .font(.headline)
+                                .onAppear {
+                                    updateGreeting()
+                                }
+                            Text("Admin")
+
                         }
                     }
-                    .onHover(perform: { hovering in
-                        self.isHovering = hovering
-                    })
+                    .padding()
                     
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .frame(width: 350, height: 150)
-                            .foregroundStyle(Color(uiColor: .secondarySystemBackground))
-                        NavigationLink(destination: InventoryManagementView()) {
-                            Text("Manage Inventory")
-                                .bold()
-                                .font(.system(size: 28))
-                                .padding()
+                    VStack() {
+                        
+                        VStack{
+//                            NavigationLink(destination: InventoryManagementView()) {
+//                                Spacer()
+//
+//                                Image(systemName: "square.and.pencil")
+//
+//                                Text("Edit")
+//                                    .font(.headline)
+//                                    .fontWeight(.bold)
+//                                    .padding()
+//                                    .cornerRadius(10)
+//
+//                            }
+                            
+                            VStack (alignment: .leading){
+                                
+                                HStack{
+                                    Text("Blood stock")
+                                        .font(.title2)
+                                    
+                                    NavigationLink(destination: InventoryView()) {
+                                        Spacer()
+                                        Text("View More Details")
+                                            .font(.headline)
+                                            .fontWeight(.bold)
+                                            .cornerRadius(10)
+                                    }
+                                }
+                                
+                                BarChart(data: bloodChartData())
+                                    .frame(height: 200)
+                                    .padding()
+                                
+                            }
+                            .padding()
+                            .cornerRadius(10)
+                            
                         }
-                    }
-                    
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .frame(width: 350, height: 150)
-                            .foregroundStyle(Color(uiColor: .secondarySystemBackground))
+                        .background(Color(uiColor: .secondarySystemBackground))
+                        
+                        
+                        
+                        
                         NavigationLink(destination: Analytics()) {
                             Text("View Analytics")
-                                .bold()
-                                .font(.system(size: 28))
+                                .font(.headline)
+                                .fontWeight(.bold)
                                 .padding()
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(10)
                         }
                     }
-                    
+                    .padding(.bottom, 60)
                 }
-                .padding(.bottom, 60)
-                .navigationBarTitle("Dashboard")
+                .padding()
             }
+        }
+    }
+
+    func bloodChartData() -> [ChartData] {
+        var chartData: [ChartData] = []
+        for bloodItem in viewModel.bloodItems {
+            let data = ChartData(label: bloodItem.id, value: Double(bloodItem.quantity))
+            chartData.append(data)
+        }
+        return chartData
+    }
+    
+    private func updateGreeting() {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+
+        switch hour {
+        case 6..<12:
+            greeting = "Good Morning"
+        case 12..<18:
+            greeting = "Good Afternoon"
+        case 18..<22:
+            greeting = "Good Evening"
+        default:
+            greeting = "Time to sleep"
         }
     }
 }
 
+
 struct InventoryHome_Previews: PreviewProvider {
     static var previews: some View {
-        InventoryHome()
+        let viewModel = InventoryViewModel() // Create a mock InventoryViewModel
+
+        return InventoryHome()
+            .environmentObject(viewModel)
     }
 }
+
