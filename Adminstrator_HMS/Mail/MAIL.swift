@@ -73,7 +73,12 @@ struct MAIL: View {
     @State private var mailId: String = "" // State variable for storing the mail ID
 
     var body: some View {
-        VStack(spacing: 16) {
+        VStack() {
+            
+            Text("Mail Sender")
+                .bold()
+                .padding()
+            
 //            Text("Generated Code:")
 //                .font(.headline)
 //
@@ -109,6 +114,7 @@ struct MAIL: View {
             // TextField for entering the email address
             TextField("Enter email address", text: $mailId)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none) //DO NOT REMOVE
                 .padding()
 
             // Button to send the email
@@ -172,6 +178,10 @@ struct MAIL: View {
             window.rootViewController?.present(hostingController, animated: true)
         }
     }
+}
+
+#Preview {
+    MAIL()
 }
 
 

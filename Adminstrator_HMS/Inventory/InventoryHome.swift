@@ -14,7 +14,7 @@ struct InventoryHome: View {
         NavigationView {
             ZStack {
                 
-                LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0.0)]), startPoint: .top, endPoint: .bottom)
+//                LinearGradient(gradient: Gradient(colors: [Color.white, Color.white.opacity(0.0)]), startPoint: .top, endPoint: .bottom)
                 
                 
                 VStack {
@@ -23,7 +23,7 @@ struct InventoryHome: View {
 //                            LinearGradient(gradient: Gradient(colors: [Color.white, Color.gray]), startPoint: .topLeading, endPoint: .bottomTrailing)
                             RoundedRectangle(cornerRadius: 8)
                                 .frame(width: 350, height: 150)
-                                .foregroundStyle(Color("solitude"))
+                                .foregroundStyle(Color(uiColor: .secondarySystemBackground))
                                 .opacity(isHovering ? 0.8 : 1.0)
                         }
                         NavigationLink(destination: InventoryView()) {
@@ -41,7 +41,7 @@ struct InventoryHome: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 350, height: 150)
-                            .foregroundStyle(Color("solitude"))
+                            .foregroundStyle(Color(uiColor: .secondarySystemBackground))
                         NavigationLink(destination: InventoryManagementView()) {
                             Text("Manage Inventory")
                                 .bold()
@@ -53,7 +53,7 @@ struct InventoryHome: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 8)
                             .frame(width: 350, height: 150)
-                            .foregroundStyle(Color("solitude"))
+                            .foregroundStyle(Color(uiColor: .secondarySystemBackground))
                         NavigationLink(destination: Analytics()) {
                             Text("View Analytics")
                                 .bold()

@@ -167,7 +167,7 @@ struct DoughnutChart: View {
         GeometryReader { geometry in
             ZStack {
                 Circle()
-                    .fill(Color.white) // Set the inner circle color to match the background
+                    .fill(Color(uiColor: .secondarySystemBackground)) // Set the inner circle color to match the background
                     .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5) // Adjust size of the inner circle as needed
                 
                 ForEach(0..<data.count) { index in
@@ -215,7 +215,7 @@ struct DoughnutChart1: View {
         GeometryReader { geometry in
             ZStack {
                 Circle()
-                    .fill(Color.white) // Set the inner circle color to match the background
+                    .fill(Color(uiColor: .secondarySystemBackground)) // Set the inner circle color to match the background
                     .frame(width: geometry.size.width * 0.5, height: geometry.size.height * 0.5) // Adjust size of the inner circle as needed
                 
                 // Booked rooms slice
