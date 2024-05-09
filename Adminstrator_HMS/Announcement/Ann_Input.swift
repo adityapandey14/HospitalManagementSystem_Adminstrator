@@ -15,13 +15,13 @@ struct AddAnnouncementView: View {
 
     var body: some View {
         VStack {
-            Text("Notices")
+            Text("Announcements")
                 .bold()
                 .padding(.bottom, 25)
-                .padding(.trailing, 250)
+                .padding(.trailing, 125)
                 .font(.system(size: 30))
             VStack {
-                TextField("Enter the notice", text: $announcementText)
+                TextField("Enter the announcement", text: $announcementText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
                     .frame(width: 380)
@@ -30,13 +30,13 @@ struct AddAnnouncementView: View {
                         .frame(width: 5, height: 5)
 //                    Spacer()
 //                        .padding()
-                    Text("Post a notice for the doctors")
+                    Text("Post an announcement for the doctors")
                         .font(.system(size: 12))
                         .padding(.leading, 5)
                 }
-                .padding(.trailing, 150)
+                .padding(.trailing, 100)
                 .padding(.bottom)
-                Button("Post Notice") {
+                Button("Post") {
                     viewModel.addAnnouncement(text: announcementText, dateTime: Date())
                     isAnnouncementAdded = true
                     announcementText = "" // Clear the text field after adding announcement
