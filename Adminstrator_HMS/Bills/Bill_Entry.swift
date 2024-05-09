@@ -31,47 +31,100 @@ struct InputPage: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text("Hospital Information")
-                    .font(.headline)
-                TextField("Hospital Name", text: $hospitalName)
-                TextField("Hospital Address", text: $hospitalAddress)
-                TextField("Hospital Contact Info", text: $hospitalContactInfo)
-
-                Text("Patient & Doctor Information")
-                    .font(.headline)
-                TextField("Patient ID", text: $patientID)
-                TextField("Doctor ID", text: $doctorID)
-
-                DatePicker("Billing Date", selection: $billingDate, displayedComponents: .date)
+                Text("Bills")
+                    .bold()
+                    .font(.system(size: 35))
+                    .padding(.trailing, 5)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundStyle(Color(uiColor: .secondarySystemBackground))
+                        .frame(width: 360, height: 150)
+                    VStack {
+                        Text("Hospital Information")
+                            .font(.headline)
+                        TextField("Hospital Name", text: $hospitalName)
+                            .padding(.leading, 10)
+                            .frame(width: 330)
+                        TextField("Hospital Address", text: $hospitalAddress)
+                            .padding(.leading, 10)
+                            .frame(width: 330)
+                        TextField("Hospital Contact Info", text: $hospitalContactInfo)
+                            .padding(.leading, 10)
+                            .frame(width: 330)
+                    }
+                }
+                .padding(.bottom)
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundStyle(Color(uiColor: .secondarySystemBackground))
+                        .frame(width: 360, height: 140)
+                    VStack {
+                        Text("Patient & Doctor Information")
+                            .font(.headline)
+                            .padding(.bottom, 10)
+                        VStack {
+                            TextField("Patient ID", text: $patientID)
+                                .padding(.leading, 10)
+                                .frame(width: 330)
+//                                .background(Color("grad3"))
+                                .cornerRadius(5)
+                            TextField("Doctor ID", text: $doctorID)
+                                .padding(.leading, 10)
+                                .frame(width: 330)
+                                .background(Color(uiColor: .secondarySystemBackground))
+                                .cornerRadius(5)
+                        }
+                        .padding(.bottom, 10)
+                    }
+                }
+                .padding(.bottom, 5)
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 8)
+                        .foregroundStyle(Color(uiColor: .secondarySystemBackground))
+                        .frame(width: 360, height: 50)
+                    DatePicker("Billing Date", selection: $billingDate, displayedComponents: .date)
+                        .padding()
+                }
 
                 Text("Items")
                     .font(.headline)
+//                    .padding(.trailing, 50)
                 ForEach(items.indices, id: \.self) { index in
                     ItemRowView(item: $items[index])
                 }
-                Button(action: addItem) {
-                    Text("Add Item")
+                HStack {
+                    Button(action: addItem) {
+                        Text("Add Item")
+                    }
+                    .padding()
+                    
+                    // Other fields ...
+                    
+                    
+                    Button(action: saveBill) {
+                        Text("Save Bill")
+                    }
+                    .padding()
+                    NavigationLink(destination: BillsListView(), isActive: $isShowingBillsList) {
+                        EmptyView()
+                    }
+                    .hidden()
+//                    .padding()
+                    
+                    Button(action: {
+                        isShowingBillsList = true
+                    }) {
+                        Text("Past bills")
+                    }
+                    .padding()
+                    .padding(.leading, 10)
                 }
-
-                // Other fields ...
-                
-
-                Button(action: saveBill) {
-                    Text("Save Bill")
-                }
-                NavigationLink(destination: BillsListView(), isActive: $isShowingBillsList) {
-                                        EmptyView()
-                                    }
-                                    .hidden()
-
-                                    Button(action: {
-                                        isShowingBillsList = true
-                                    }) {
-                                        Text("Go to Bill List")
-                                    }
+                .padding()
             }
             .padding()
         }
+        .padding(.top, 20)
     }
 
     private func addItem() {
@@ -93,35 +146,47 @@ struct ItemRowView: View {
     @State private var priceString = ""
 
     var body: some View {
-        VStack(alignment: .leading) {
-            TextField("Description", text: $item.description)
-            HStack {
-                TextField("Quantity", text: $quantityString)
-                    .keyboardType(.numberPad)
-                    .onChange(of: quantityString) { newValue in
-                        if let quantity = Int(newValue) {
-                            item.quantity = quantity
-                            calculateTotalCharge() // Call calculateTotalCharge here
-                        } else {
-                            item.quantity = nil
+        ZStack {
+            RoundedRectangle(cornerRadius: 8)
+                .foregroundStyle(Color(uiColor: .secondarySystemBackground))
+                .frame(width: 360, height: 100)
+            VStack(alignment: .leading) {
+                TextField("Description", text: $item.description)
+                    .padding(.leading, 15)
+                    .padding(.top)
+//                    .padding()
+                HStack {
+                    TextField("Quantity", text: $quantityString)
+//                        .padding(.leading, 10)
+                        .padding()
+                        .keyboardType(.numberPad)
+                        .onChange(of: quantityString) { newValue in
+                            if let quantity = Int(newValue) {
+                                item.quantity = quantity
+                                calculateTotalCharge() // Call calculateTotalCharge here
+                            } else {
+                                item.quantity = nil
+                            }
                         }
-                    }
-
-                TextField("Price per Service", text: $priceString)
-                    .keyboardType(.decimalPad)
-                    .onChange(of: priceString) { newValue in
-                        if let price = Double(newValue) {
-                            item.pricePerService = price
-                            calculateTotalCharge() // Call calculateTotalCharge here
-                        } else {
-                            item.pricePerService = nil
+                    
+                    TextField("Price/Service", text: $priceString)
+                        .keyboardType(.decimalPad)
+                        .onChange(of: priceString) { newValue in
+                            if let price = Double(newValue) {
+                                item.pricePerService = price
+                                calculateTotalCharge() // Call calculateTotalCharge here
+                            } else {
+                                item.pricePerService = nil
+                            }
                         }
-                    }
-
-                Text("Total Charge: \(item.totalCharge ?? 0,specifier: "%.2f")")
+                    
+                    Text("Bill Amount \(item.totalCharge ?? 0,specifier: "%.2f")")
+                        .padding(.bottom)
+                }
             }
         }
     }
+    
 
     private func calculateTotalCharge() {
         guard let quantity = item.quantity, let pricePerService = item.pricePerService else {

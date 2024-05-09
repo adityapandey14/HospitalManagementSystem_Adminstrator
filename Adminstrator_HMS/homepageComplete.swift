@@ -56,8 +56,8 @@ struct homepageComplete: View {
 //            }
 //            .accentColor(Color.accent)
         }
-        .tint(Color.accent)
-        .accentColor(Color.accent)
+        .tint(Color("AccentColor 1"))
+        .accentColor(Color("AccentColor 1"))
         //.navigationBarHidden(false)
 //        .preferredColorScheme(.dark)
     }
