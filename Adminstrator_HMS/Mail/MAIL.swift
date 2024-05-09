@@ -163,7 +163,7 @@ struct MAIL: View {
             subject: "Generated Code",
             body: "Hello,\n\nHere is your generated code: \(generatedCode)\n\nBest regards,\nYour App",
             toEmails: [mailId], // Use the provided mailId
-            fromEmail: "pk6389@srmist.edu.in"
+            fromEmail: ""
         )
 
         // Present the SwiftUI view as a UIKit view controller
