@@ -23,6 +23,11 @@
 		47B685B72BDA33DD0008DAE9 /* RoomAlloocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */; };
 		47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B685B82BDA34280008DAE9 /* FirebaseManager.swift */; };
 		482821962BECBC5E00A88D20 /* MAIL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482821952BECBC5E00A88D20 /* MAIL.swift */; };
+		488176762BECF46B00CF3F00 /* topDoctorCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4881766E2BECF46B00CF3F00 /* topDoctorCard.swift */; };
+		488176782BECF46B00CF3F00 /* DepartmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488176702BECF46B00CF3F00 /* DepartmentModel.swift */; };
+		488176792BECF46B00CF3F00 /* DoctorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488176712BECF46B00CF3F00 /* DoctorModel.swift */; };
+		4881767A2BECF46B00CF3F00 /* DoctorProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488176722BECF46B00CF3F00 /* DoctorProfile.swift */; };
+		4881767C2BECF46C00CF3F00 /* ReviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488176742BECF46B00CF3F00 /* ReviewModel.swift */; };
 		4890D41C2BDF5A6F00EF8750 /* homepageComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */; };
 		DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EAF2BD58CF900FAD930 /* User.swift */; };
 		DF6B2EB42BD58D2500FAD930 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */; };
@@ -82,6 +87,11 @@
 		47B685B62BDA33DD0008DAE9 /* RoomAlloocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomAlloocationView.swift; sourceTree = "<group>"; };
 		47B685B82BDA34280008DAE9 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
 		482821952BECBC5E00A88D20 /* MAIL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MAIL.swift; sourceTree = "<group>"; };
+		4881766E2BECF46B00CF3F00 /* topDoctorCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = topDoctorCard.swift; sourceTree = "<group>"; };
+		488176702BECF46B00CF3F00 /* DepartmentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentModel.swift; sourceTree = "<group>"; };
+		488176712BECF46B00CF3F00 /* DoctorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorModel.swift; sourceTree = "<group>"; };
+		488176722BECF46B00CF3F00 /* DoctorProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoctorProfile.swift; sourceTree = "<group>"; };
+		488176742BECF46B00CF3F00 /* ReviewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewModel.swift; sourceTree = "<group>"; };
 		4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homepageComplete.swift; sourceTree = "<group>"; };
 		DF6B2EAF2BD58CF900FAD930 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DF6B2EB32BD58D2500FAD930 /* UserDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetails.swift; sourceTree = "<group>"; };
@@ -177,6 +187,26 @@
 			path = Mail;
 			sourceTree = "<group>";
 		};
+		4881766D2BECF41200CF3F00 /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Doctor;
+			sourceTree = "<group>";
+		};
+		488176752BECF46B00CF3F00 /* Doctor */ = {
+			isa = PBXGroup;
+			children = (
+				4881766E2BECF46B00CF3F00 /* topDoctorCard.swift */,
+				488176702BECF46B00CF3F00 /* DepartmentModel.swift */,
+				488176712BECF46B00CF3F00 /* DoctorModel.swift */,
+				488176722BECF46B00CF3F00 /* DoctorProfile.swift */,
+				488176742BECF46B00CF3F00 /* ReviewModel.swift */,
+			);
+			name = Doctor;
+			path = ../../Doctor;
+			sourceTree = "<group>";
+		};
 		DF6B2EAD2BD58CD600FAD930 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,12 +244,14 @@
 		DF9B2F332BD26E22009B8C02 /* Adminstrator_HMS */ = {
 			isa = PBXGroup;
 			children = (
+				488176752BECF46B00CF3F00 /* Doctor */,
 				4762BFE12BEA328600845B96 /* Announcement */,
 				4762BFB52BE88DC000845B96 /* Bills */,
 				4721C9622BE3447700310CED /* Inventory */,
 				DF9B2F5F2BD26E58009B8C02 /* GoogleService-Info.plist */,
 				DF9B2F342BD26E22009B8C02 /* Adminstrator_HMSApp.swift */,
 				DF9B2F362BD26E22009B8C02 /* ContentView.swift */,
+				4881766D2BECF41200CF3F00 /* Doctor */,
 				DF6B2EBA2BD58E1D00FAD930 /* appFonts.swift */,
 				4890D41B2BDF5A6F00EF8750 /* homepageComplete.swift */,
 				DF6B2EDA2BD59D4600FAD930 /* Homepage.swift */,
@@ -416,10 +448,12 @@
 				DF9B2F372BD26E22009B8C02 /* ContentView.swift in Sources */,
 				DF6B2EDB2BD59D4600FAD930 /* Homepage.swift in Sources */,
 				DF6B2EBB2BD58E1D00FAD930 /* appFonts.swift in Sources */,
+				4881767C2BECF46C00CF3F00 /* ReviewModel.swift in Sources */,
 				47B685B92BDA34280008DAE9 /* FirebaseManager.swift in Sources */,
 				DF6B2ED32BD59C1700FAD930 /* AuthViewModel.swift in Sources */,
 				482821962BECBC5E00A88D20 /* MAIL.swift in Sources */,
 				4762BFBD2BE8991900845B96 /* BillListView.swift in Sources */,
+				488176762BECF46B00CF3F00 /* topDoctorCard.swift in Sources */,
 				4721C9642BE3449400310CED /* Inventory_Model.swift in Sources */,
 				4721C96D2BE34ED200310CED /* InventoryHome.swift in Sources */,
 				4762BFE72BEA33EA00845B96 /* Ann_Input.swift in Sources */,
@@ -429,8 +463,11 @@
 				DF9B2F352BD26E22009B8C02 /* Adminstrator_HMSApp.swift in Sources */,
 				4721C9672BE3464D00310CED /* InventoryViewModel.swift in Sources */,
 				4721C9692BE3468800310CED /* InventoryView.swift in Sources */,
+				4881767A2BECF46B00CF3F00 /* DoctorProfile.swift in Sources */,
 				4762BFB92BE88DF500845B96 /* BillViewmodel.swift in Sources */,
 				4762BFE52BEA33C300845B96 /* Ann_ViewModel.swift in Sources */,
+				488176782BECF46B00CF3F00 /* DepartmentModel.swift in Sources */,
+				488176792BECF46B00CF3F00 /* DoctorModel.swift in Sources */,
 				DF6B2ED72BD59C4600FAD930 /* loginView.swift in Sources */,
 				DF6B2EB02BD58CF900FAD930 /* User.swift in Sources */,
 				4762BFE32BEA32A500845B96 /* Ann_Model.swift in Sources */,
