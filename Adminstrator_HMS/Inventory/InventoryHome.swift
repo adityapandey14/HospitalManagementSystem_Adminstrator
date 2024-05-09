@@ -89,13 +89,22 @@ struct InventoryHome: View {
                         }
                         .background(Color(uiColor: .secondarySystemBackground))
                                                     
-                        Text("Doctors")
-                            .bold()
-//                            .padding()
-                            .font(.system(size: 20))
-                            .padding(.trailing, 280)
-                            .padding(.top)
-                            .padding(.bottom)
+                        HStack{
+                            Text("Doctors")
+                                .bold()
+    //                            .padding()
+                                .font(.system(size: 20))
+                            Spacer()
+                            NavigationLink(destination: DoctorListDetail()) {
+                                Text("View all")
+                                    .font(.headline)
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.accentColor1)
+                                    .cornerRadius(10)
+                            }
+                        }
+                        
                         ScrollViewDoctor()
                         
                         NavigationLink(destination: Analytics()) {
@@ -104,7 +113,7 @@ struct InventoryHome: View {
                                 .fontWeight(.bold)
                                 .padding()
                                 .foregroundColor(.white)
-                                .background(Color.blue)
+                                .background(Color.accentColor1 )
                                 .cornerRadius(10)
                         }
                         .padding(.top)

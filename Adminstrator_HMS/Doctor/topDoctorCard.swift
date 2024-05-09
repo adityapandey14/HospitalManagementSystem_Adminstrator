@@ -23,7 +23,7 @@ struct topDoctorCard : View {
     var body: some View {
         
         NavigationLink(destination : DoctorProfile(imageUrl: imageUrl, fullName: fullName, specialist: specialist, doctor: doctorDetail)) {
-            VStack(alignment: .leading) {
+            VStack{
                 HStack {
                     VStack {
                         if let imageUrl = URL(string: imageUrl) {
