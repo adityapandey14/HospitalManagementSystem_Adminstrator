@@ -33,15 +33,17 @@ struct RoomAllocationView: View {
                     VStack {
                         Text("Room Allocation")
                             .bold()
-                            .font(.system(size: 25))
+                            .font(.system(size: 35))
                         HStack{
                             Text("Patient ID")
                                 .foregroundColor(Color("AccentColor 1"))
+                                .padding()
                             TextField("Enter PatientID", text: $patientIDInput)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .cornerRadius(20)
                                 .foregroundColor(Color("AccentColor 1"))
                                 .padding()
+                                .background(Color(uiColor: .secondarySystemBackground))
                             
                         }
                         //.underlineTextField()
@@ -49,24 +51,29 @@ struct RoomAllocationView: View {
                         HStack{
                             Text("Doctor ID")
                                 .foregroundColor(Color(red:115/255, green:151/255, blue:180/255))
+                                .padding()
                             TextField("Enter DoctorID", text: $doctorIDInput)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .cornerRadius(20)
-                                .foregroundColor(Color(red:115/255, green:151/255, blue:180/255))
+                                .foregroundColor(Color("AccentColor 1"))
                                 .padding()
+                                .background(Color(uiColor: .secondarySystemBackground))
                         }
                         Divider()
                         
                         DatePicker("Check-in Date", selection: $checkInDate, in: Date()..., displayedComponents: .date)
-                            .foregroundColor(Color(red:115/255, green:151/255, blue:180/255))
+                            .foregroundColor(Color("AccentColor 1"))
+                            .padding()
                         Divider()
                         
                         DatePicker("Check-out Date", selection: $checkOutDate, in: checkInDate..., displayedComponents: .date)
-                            .foregroundColor(Color(red:115/255, green:151/255, blue:180/255))
+                            .foregroundColor(Color("AccentColor 1"))
+                            .padding()
                         Divider()
                         HStack {
                             Text("Type of Room")
-                                .foregroundColor(Color(red:115/255, green:151/255, blue:180/255))
+                                .foregroundColor(Color("AccentColor 1"))
+                                .padding()
                             Spacer()
                             Picker("Room Type", selection: $selectedRoomType) {
                                 ForEach(roomTypes.keys.sorted(), id: \.self) {
@@ -74,7 +81,8 @@ struct RoomAllocationView: View {
                                 }
                             }
                             .pickerStyle(MenuPickerStyle())
-                            .accentColor(Color(red:10/255, green:29/255, blue:59/255))
+                            .accentColor(Color("AccentColor 1"))
+//                            .foregroundStyle(Color("AccentColor 1"))
                             // .padding()
                             .onReceive([selectedRoomType].publisher.first()) { _ in
                                 filterAvailableRooms(selectedRoomType,checkInDate: checkInDate,checkOutDate: checkOutDate)
@@ -83,7 +91,8 @@ struct RoomAllocationView: View {
                         Divider()
                         HStack {
                             Text("Room Number")
-                                .foregroundColor(Color(red:115/255, green:151/255, blue:180/255))
+                                .foregroundColor(Color("AccentColor 1"))
+                                .padding()
                             Spacer()
                             Picker("Room Number", selection: $selectedRoomNumber) {
                                 ForEach(availableRooms, id: \.self) { roomNumber in
@@ -91,7 +100,7 @@ struct RoomAllocationView: View {
                                 }
                             }
                             .pickerStyle(MenuPickerStyle())
-                            .accentColor(Color(red:10/255, green:29/255, blue:59/255))
+                            .accentColor(Color("AccentColor 1"))
                             .padding()
                         }
                         Spacer()
@@ -122,10 +131,10 @@ struct RoomAllocationView: View {
                             }
                             
                         }
-                        
-                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .foregroundColor(.black)
                         .frame(width: 357, height: 55)
-                        .background(Color(red: 10/255, green: 29/255, blue: 59/255))
+                        .background(Color("AccentColor 1"))
                         .padding()
                         .disabled(
                             patientIDInput.isEmpty || doctorIDInput.isEmpty || selectedRoomNumber.isEmpty
@@ -162,7 +171,7 @@ struct RoomAllocationView: View {
                     }
                     .padding()
                 }
-                .background(Color(red:236/255, green:241/255, blue:247/255))
+                    .background(Color(uiColor: .secondarySystemBackground))
                 .toolbar {
                     ToolbarItem(placement: .navigationBarLeading) {
                         //                    Button(action: {}) {

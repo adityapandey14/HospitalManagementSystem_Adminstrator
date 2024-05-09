@@ -185,10 +185,13 @@ struct ItemRowView: View {
     }
 }
 
-#Preview {
-    InputPage()
+//
+struct InputPage_Previews : PreviewProvider {
+    static var previews: some View{
+        InputPage()
+            .environmentObject(BillViewModel())
+    }
 }
-
 
 
 

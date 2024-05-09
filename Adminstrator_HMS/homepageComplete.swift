@@ -30,11 +30,15 @@ struct homepageComplete: View {
                         Label("Unique Code" , systemImage: "mail")
                     }
                 
-                
+                AddAnnouncementView()
+                    .tabItem {
+                        Label("Notices", systemImage: "megaphone")
+                    }
                 RoomAllocationView()
                     .tabItem {
                         Label("Rooms" , systemImage: "bed.double")
                     }
+                
                 
                
                 
@@ -58,6 +62,8 @@ struct homepageComplete: View {
     }
 }
 
-#Preview {
-    homepageComplete()
-}
+//struct homepageComplete_Previews : PreviewProvider {
+//    static var previews: some View{
+//        homepageComplete()
+//    }
+//}

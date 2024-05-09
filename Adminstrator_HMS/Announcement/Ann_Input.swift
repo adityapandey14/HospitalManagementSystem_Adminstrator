@@ -15,18 +15,44 @@ struct AddAnnouncementView: View {
 
     var body: some View {
         VStack {
-            Text("Announcement")
-            TextField("Enter Announcement", text: $announcementText)
+            Text("Notices")
+                .bold()
+                .padding(.bottom, 25)
+                .padding(.trailing, 250)
+                .font(.system(size: 30))
+            VStack {
+                TextField("Enter the notice", text: $announcementText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
+                    .frame(width: 380)
+                HStack {
+                    Image(systemName: "info.circle")
+                        .frame(width: 5, height: 5)
+//                    Spacer()
+//                        .padding()
+                    Text("Post a notice for the doctors")
+                        .font(.system(size: 12))
+                        .padding(.leading, 5)
+                }
+                .padding(.trailing, 150)
+                .padding(.bottom)
+                Button("Post Notice") {
+                    viewModel.addAnnouncement(text: announcementText, dateTime: Date())
+                    isAnnouncementAdded = true
+                    announcementText = "" // Clear the text field after adding announcement
+                }
                 .padding()
-
-            Button("Add Announcement") {
-                viewModel.addAnnouncement(text: announcementText, dateTime: Date())
-                isAnnouncementAdded = true
-                announcementText = "" // Clear the text field after adding announcement
+                .disabled(announcementText.isEmpty) // Disable the button if announcementText is empty
+//                .padding()
+                .background(Color(uiColor: .secondarySystemBackground))
+                .foregroundColor(Color("AccentColor 1"))
+                .cornerRadius(8)
+                .padding(.top, 20)
             }
-            .padding()
-            .disabled(announcementText.isEmpty) // Disable the button if announcementText is empty
+            .padding(.bottom, 170)
+            
         }
+        .padding(.bottom, 250)
         .alert(isPresented: $isAnnouncementAdded) {
             Alert(title: Text("Announcement Added"), message: nil, dismissButton: .default(Text("OK")))
         }
