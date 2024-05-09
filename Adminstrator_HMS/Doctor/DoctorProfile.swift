@@ -141,9 +141,7 @@ struct DoctorProfile: View {
                             
                         }
                         .padding()
-                        .onAppear() {
-                            reviewViewModel.fetchReviewDetail()
-                            }
+                       
                         
                         
 //                        Text("Select Schedule")
@@ -158,6 +156,9 @@ struct DoctorProfile: View {
                         
                         
                     }  //End of VStack
+                    .onAppear() {
+                        reviewViewModel.fetchReviewDetail()
+                        }
                     
                 } // End of Scroll View
                 .navigationTitle("Book Appointment")
