@@ -132,6 +132,10 @@ struct ItemRowView: View {
     }
 }
 
+#Preview {
+    InputPage()
+}
+
 
 
 
