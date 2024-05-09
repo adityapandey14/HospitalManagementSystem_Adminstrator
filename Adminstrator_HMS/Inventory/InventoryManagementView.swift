@@ -27,14 +27,8 @@ struct InventoryManagementView: View {
                 .font(.system(size: 30))
                 .padding(.bottom, 40)
             
-            ZStack {
-                
-                RoundedRectangle(cornerRadius: 8)
-                    .frame(width: 379, height: 200)
-                    .foregroundStyle(Color("solitude"))
+            VStack {
                 VStack {
-                    
-                    
                     Text("Manage Blood")
                         .bold()
                         .padding(.trailing, 210)
@@ -115,12 +109,12 @@ struct InventoryManagementView: View {
                     }
                 }
             }
+            .background(Color(uiColor: .secondarySystemBackground))
+            .cornerRadius(10)
+            .padding()
+
             
-            ZStack {
-                
-                RoundedRectangle(cornerRadius: 8)
-                    .frame(width: 379, height: 200)
-                    .foregroundStyle(Color("solitude"))
+            VStack {
                 VStack {
                     Text("Manage Oxygen")
                         .bold()
@@ -156,10 +150,13 @@ struct InventoryManagementView: View {
                     }
                 }
             }
-            .padding(.bottom, 150)
-            .padding(.top)
+            .background(Color(uiColor: .secondarySystemBackground))
+            .cornerRadius(10)
+            .padding()
+
         }
-        .padding(.top)
+        Spacer()
+
     }
 }
 
