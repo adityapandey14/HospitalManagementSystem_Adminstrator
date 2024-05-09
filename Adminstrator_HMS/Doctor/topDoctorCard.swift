@@ -104,7 +104,6 @@ struct topDoctorCard : View {
             .foregroundColor(Color.black)
             .background(Color(uiColor: .secondarySystemBackground))
             .cornerRadius(10)
-            .padding(.horizontal,20)
         }
         .onAppear() {
             reviewViewModel.fetchReviewDetail()
