@@ -38,7 +38,7 @@ struct DoctorProfile: View {
                                         .frame(width: 85, height: 85)
                                         .cornerRadius(50)
                                         .padding(.trailing, 5)
-                                        .foregroundColor(.gray)
+                                        .foregroundColor(.accentColor1)
                                 }
                                 .frame(width: 90, height: 90)
                             } else {
@@ -48,7 +48,7 @@ struct DoctorProfile: View {
                                     .frame(width: 85, height: 85)
                                     .cornerRadius(50)
                                     .padding(.trailing, 5)
-                                    .foregroundColor(.gray)
+                                    .foregroundColor(.accentColor1)
                             }
                             
                             VStack(alignment: .leading) {
@@ -79,9 +79,8 @@ struct DoctorProfile: View {
                                         .resizable()
                                         .clipped()
                                         .frame(width: 40, height: 30)
-                                        .foregroundColor(.blue)
                                         .cornerRadius(50)
-                                        .foregroundStyle(Color.myGray)
+                                        .foregroundStyle(Color.accentColor1)
                                 }
                                 Text("\(reviewCount)")
                                 Text("Patients")
@@ -98,9 +97,8 @@ struct DoctorProfile: View {
                                         .clipped()
                                         .frame(width: 30, height: 30)
                                         .cornerRadius(50)
-                                        .foregroundColor(.blue)
+                                        .foregroundColor(.accentColor1)
 //                                        .padding(.trailing, 5)
-                                        .foregroundStyle(Color("myGray"))
                                 }
                                 if !reviewsForSkillOwner.isEmpty {
                                     //Calculating Average of the doctor
@@ -129,10 +127,9 @@ struct DoctorProfile: View {
                                         .resizable()
                                         .clipped()
                                         .frame(width: 30, height: 30)
-                                        .foregroundColor(.blue)
                                         .cornerRadius(50)
 //                                        .padding(.trailing, 5)
-                                        .foregroundColor(.myGray)
+                                        .foregroundColor(.accentColor1)
                                 }
                                 Text(doctor.experience)
                                 Text("Experience")
@@ -200,22 +197,18 @@ struct ReviewListView: View {
     var doctorId: String
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading){
             ForEach(reviewViewModel.reviewDetails) { review in
                 VStack(alignment: .leading) {
-                    
                     Text("\(String(repeating: "⭐️", count: review.ratingStar))")
                         .font(AppFont.actionButton)
                     
                     Text(" \(review.comment)")
                         .font(.headline)
-                   
-                    
                 }
-                .padding(.vertical, 5)
             }
-            .padding()
         }
+        .padding()
         .onAppear {
             reviewViewModel.fetchReviewDetailByDoctorId(doctorId: doctorId)
         }

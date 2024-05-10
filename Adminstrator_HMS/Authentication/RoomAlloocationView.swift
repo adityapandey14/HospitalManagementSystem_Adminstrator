@@ -34,6 +34,7 @@ struct RoomAllocationView: View {
                         Text("Room Allocation")
                             .bold()
                             .font(.system(size: 35))
+                            .padding(.trailing, 105)
                         HStack{
                             Text("Patient ID")
                                 .foregroundColor(Color("AccentColor 1"))
