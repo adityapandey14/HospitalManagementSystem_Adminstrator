@@ -19,7 +19,7 @@ struct DoctorListDetail: View {
                 VStack{
                     ForEach(departmentViewModel.departmentTypes) { departmentType in
                         VStack(alignment: .leading){
-                            Text(departmentType.departmentType)
+                            Text(departmentType.departmentType.capitalized)
                             ForEach(departmentType.specialityDetails) { detail in
                                 if let doctor = doctorViewModel.doctorDetails.first(where: { $0.id == detail.doctorId }) {
                                     topDoctorCard(fullName: doctor.fullName, specialist: doctor.speciality, doctorUid: doctor.id, imageUrl: doctor.profilephoto ?? "", doctorDetail: doctor)
